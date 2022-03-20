@@ -21,11 +21,51 @@
 }
 
 span {
-  height: 150px;
+  height: 130px;
 }
 
 span a{
   text-decoration: none;
+}
+
+
+@media (min-width: 576px){
+  #main-profile{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 430px;
+  }
+
+  .container-fluid{
+    display: flex;
+    justify-content: left;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 575px){
+  #main-profile{
+    position: absolute;
+    width: 30%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 22%;
+    top: 280px;
+  }
+
+
+  #data-name{
+    margin-top: 60px;
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
 }
 
 
