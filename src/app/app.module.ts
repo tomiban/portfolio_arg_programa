@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
 import { CursesComponent } from './components/curses/curses.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { CursesComponent } from './components/curses/curses.component';
     ProfileComponent,
     ExperienceComponent,
     EducationComponent,
-    CursesComponent
+    CursesComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
