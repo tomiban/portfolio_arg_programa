@@ -1,0 +1,16 @@
+.row{
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+}
+
+footer{
+    color: rgb(19, 8, 8);
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,7 +1,32 @@
+.row{
+    width: 99%;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
 #logo {
     width: 180px;
     height: 100px;
     margin: 0px;
     margin-left: 8px;
-
 }
+
+
+.redes img { 
+    width: 40px;
+    margin: 3px;
+}
+
+.btn{
+    margin-left: 5px;
+    border-width: 2px;
+}
+
+/*
+VISTA DE CELULAR
+*/
