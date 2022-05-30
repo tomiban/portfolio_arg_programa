@@ -1,53 +1,35 @@
 <div class="row m-4 p-1 bg-body rounded shadow">
   <h2>Educación</h2>
 
-  <div class="col-md-12 col-lg-12">
+  <div class="col-md-12 col-lg-12" *ngFor="let education of educacion">
+    <div class="text-center">
+      <a class="btn-sm btn-primary tooltips"
+      data-placement="top"
+      data-toogle="tooltip"
+      data-original-title="Edit">
+    <i class="fa fa-pencil"></i></a>
+    <a class="btn-sm btn-danger tooltips"
+      data-placement="top"
+      data-toogle="tooltip"
+      data-original-title="Delete">
+    <i class="fa fa-times"></i></a>
+    </div>
+    
     <h4>
       <a href="#"
         ><img
           class="img-rounded m-1"
-          alt="Universidad Tecnológica Nacional"
           width="50"
           height="50"
-          src="../../../assets/utn.svg"
+          src="{{education.imagenEdu}}"
         />
-        Universidad Tecnológica Nacional - Regional Rafaela
+        {{education.tituloEdu}}
       </a>
     </h4>
-    <small>Técnicatura Superior en Programación</small>
-    <p class="text-secondary">Año 2022</p>
+    
+    <small>{{education.descripcionEdu}}</small>
+    <p class="text-secondary">{{education.fechaEdu}}</p>
   </div>
 
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img
-          class="img-rounded m-1"
-          alt="Universidad Nacional del Litoral"
-          width="60"
-          height="60"
-          src="../../../assets/UNL.png"
-        />
-        Universidad Nacional del Litoral
-      </a>
-    </h4>
-    <small>Licenciatura en Derecho</small>
-    <p class="text-secondary">Año 2017 - 2021</p>
-  </div>
-
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img
-          class="img-rounded m-2"
-          alt="Colegio San José"
-          src="../../../assets/colegiosj.png"
-          width="60"
-          height="60"
-        />Colegio Secundario "San José"
-      </a>
-    </h4>
-    <small>Bachiller en Ciencias Sociales y Humanidades</small>
-    <p class="text-secondary">Año 2015</p>
-  </div>
+  
 </div>
