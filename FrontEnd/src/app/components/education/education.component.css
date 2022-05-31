@@ -1,3 +1,15 @@
 a{
     text-decoration: none;
 }
+
+.boton{
+    float: right;
+}
+
+.boton button{
+    border-color: #2f6997;
+}
+
+h2{
+    display: inline-block;
+}

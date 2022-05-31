@@ -1,14 +1,28 @@
 <div class="row m-4 p-1 bg-body rounded shadow">
-  <h2>Educación</h2>
+  <div class="educacion">
+    <h2>Educación</h2>
+    <div class="boton">
+      <button type="button" class="btn btn-link btn-sm" (click)="onOpenModal('add')">
+        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus"></i>
+        <span class="sr-only"> (current) </span>
+        </a>
+      </button>
+    </div>
+  </div>
 
   <div class="col-md-12 col-lg-12" *ngFor="let education of educacion">
     <div class="text-center">
-      <a class="btn-sm btn-primary tooltips"
+      <a 
+      (click)="onOpenModal('edit',education)"
+      class="btn-sm btn-primary tooltips"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Edit">
     <i class="fa fa-pencil"></i></a>
-    <a class="btn-sm btn-danger tooltips"
+
+    <a 
+      (click)="onOpenModal('delete',education)"
+      class="btn-sm btn-danger tooltips"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Delete">
@@ -30,6 +44,6 @@
     <small>{{education.descripcionEdu}}</small>
     <p class="text-secondary">{{education.fechaEdu}}</p>
   </div>
-
-  
 </div>
+
+
