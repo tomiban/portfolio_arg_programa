@@ -2,8 +2,8 @@
   <div class="row edu main-container">
     <h2>Educación</h2>
     <div class="boton">
-      <button type="button" class="btn btn-link btn-sm" (click)="onOpenModal('add')">
-        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus"></i>
+      <button type="button" class="btn btn-link btn-sm" class="boton" (click)="onOpenModal('add')">
+        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus fa-lg"></i>
         <span class="sr-only"> (current) </span>
         </a>
       </button>
@@ -42,8 +42,8 @@
       </a>
     </h4>
     
-    <small>{{education.descripcionEdu}}</small>
-    <p class="text-secondary">{{education.fechaEdu}}</p>
+    <p>{{education.descripcionEdu}}</p>
+    <p class="text-secondary">- Año: {{education.fechaEdu}}</p>
   </div>
 
 <!--AGREGAR MODAL-->
@@ -166,7 +166,7 @@ aria-hidden="true"
       </button>
     </div>
     <div class="modal-body">
-      <form #editForm='ngForm' (ngSubmit)="onAddEducation(addForm)">
+      <form #editForm='ngForm'>
         <div class="form-group">
           <label for="tituloEdu">Institucion</label>
           <input type="text"
@@ -236,6 +236,7 @@ aria-hidden="true"
         <button
         (click)="onUpdateEducation(editForm.value)"
         type="submit"
+        data-dismiss="modal"
         class="btn btn-primary"
         > Añadir cambios
         </button>
@@ -289,6 +290,7 @@ aria-hidden="true"
         (click)="onDeleteEducation(deleteEducation!.idEdu)"
         type="submit"
         class="btn btn-danger"
+        data-dismiss="modal"
         id="myModal"
         > Eliminar
         </button>
