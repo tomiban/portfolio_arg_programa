@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

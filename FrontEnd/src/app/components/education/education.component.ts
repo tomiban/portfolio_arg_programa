@@ -40,7 +40,7 @@ export class EducationComponent implements OnInit {
     if(mode==='add'){
       button.setAttribute('data-target', '#addEducationModal');
     } else if(mode==='delete'){
-      this. deleteEducation=education;
+      this.deleteEducation=education;
       button.setAttribute('data-target', '#deleteEducationModal');
     } else if (mode==='edit'){
       this.editEducation=education;
@@ -66,9 +66,7 @@ export class EducationComponent implements OnInit {
     })
   }
 
-
 public onUpdateEducation(education: Educacion){
-  this.editEducation=education;
   document.getElementById('add-education-form')?.click();
   this.educacionService.updateEducation(education).subscribe({
     next:(response: Educacion) =>{
@@ -93,3 +91,5 @@ public onDeleteEducation(idEdu: number):void{
   })
   }
 }
+
+
