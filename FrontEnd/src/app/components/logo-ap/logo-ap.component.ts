@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logo-ap',
@@ -8,11 +7,9 @@ import { Router } from '@angular/router';
 })
 export class LogoAPComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  login() {
-    this.router.navigate(['/login']);
-  }
+
 }
