@@ -1,53 +1,304 @@
 <div class="row m-4 p-1 bg-body rounded shadow">
-  <h2>Educación</h2>
+  <div class="row edu main-container">
+    <h2>Educación</h2>
+    <div class="boton">
+      <button type="button" class="btn btn-link btn-sm" class="boton" (click)="onOpenModal('add')">
+        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus fa-lg"></i>
+        <span class="sr-only"> (current) </span>
+        </a>
+      </button>
+    </div>
+  </div>
 
-  <div class="col-md-12 col-lg-12">
+  <div id="main-container">
+  <div class="col-md-12 col-lg-12" *ngFor="let education of educacion">
+    <div class="text-center">
+      <a 
+      (click)="onOpenModal('edit',education)"
+      class="btn-sm btn-primary tooltips"
+      data-placement="top"
+      data-toogle="tooltip"
+      data-original-title="Edit">
+    <i class="fa fa-pencil"></i></a>
+
+    <a 
+      (click)="onOpenModal('delete',education)"
+      class="btn-sm btn-danger tooltips"
+      data-placement="top"
+      data-toogle="tooltip"
+      data-original-title="Delete">
+    <i class="fa fa-times"></i></a>
+    </div>
+    
     <h4>
       <a href="#"
         ><img
           class="img-rounded m-1"
-          alt="Universidad Tecnológica Nacional"
-          width="50"
-          height="50"
-          src="../../../assets/utn.svg"
+          width="65"
+          height="60"
+          src="{{education.imagenEdu}}"
         />
-        Universidad Tecnológica Nacional - Regional Rafaela
+        {{education.tituloEdu}}
       </a>
     </h4>
-    <small>Técnicatura Superior en Programación</small>
-    <p class="text-secondary">Año 2022</p>
+    
+    <p>{{education.descripcionEdu}}</p>
+    <p class="text-secondary">- Año: {{education.fechaEdu}}</p>
   </div>
 
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img
-          class="img-rounded m-1"
-          alt="Universidad Nacional del Litoral"
-          width="60"
-          height="60"
-          src="../../../assets/UNL.png"
-        />
-        Universidad Nacional del Litoral
-      </a>
-    </h4>
-    <small>Licenciatura en Derecho</small>
-    <p class="text-secondary">Año 2017 - 2021</p>
-  </div>
+<!--AGREGAR MODAL-->
+<div
+class="modal fade"
+id="addEducationModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="addEducationModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addEducationmodalLabel">Añadir educación</h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
+      >
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #addForm='ngForm' (ngSubmit)="onAddEducation(addForm)">
+        <div class="form-group">
+          <label for="tituloEdu">Institucion</label>
+          <input type="text"
+            ngModel
+            name="tituloEdu"
+            class="form-control"
+            id="tituloEdu"
+            placeholder="Institucion"
+            required
+          >
+        </div>
 
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img
-          class="img-rounded m-2"
-          alt="Colegio San José"
-          src="../../../assets/colegiosj.png"
-          width="60"
-          height="60"
-        />Colegio Secundario "San José"
-      </a>
-    </h4>
-    <small>Bachiller en Ciencias Sociales y Humanidades</small>
-    <p class="text-secondary">Año 2015</p>
+        <div class="form-group">
+          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel
+            name="imagenEdu"
+            class="form-control"
+            id="imagenEdu"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionEdu">Titulo</label>
+          <input type="text"
+            ngModel
+            name="descripcionEdu"
+            class="form-control"
+            id="descripcionEdu"
+            placeholder="Titulo"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="fechaEdu">Fecha</label>
+          <input type="text"
+            ngModel
+            name="fechaEdu"
+            class="form-control"
+            id="fechaEdu"
+            placeholder="Fecha"
+            required
+          >
+        </div>
+
+       
+
+        <div class="model-footer">
+          <button
+            type="button"
+            id="add-education-form"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        <button
+        [disabled]="addForm.invalid"
+        type="submit"
+        class="btn btn-primary"
+        > Añadir cambios
+        </button>
+        </div>
+      </form>
+    </div>
+
   </div>
+</div>
+</div>
+<!--EDITAR MODAL-->
+<div
+class="modal fade"
+id="editEducationModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="educationEditModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="updateEducationmodalLabel">Editar Educación  {{editEducation?.tituloEdu}} </h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
+      >
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #editForm='ngForm'>
+        <div class="form-group">
+          <label for="tituloEdu">Institucion</label>
+          <input type="text"
+            ngModel="{{editEducation?.tituloEdu}}"
+            name="tituloEdu"
+            class="form-control"
+            id="tituloEdu"
+            placeholder="Institucion"
+            required
+          >
+        </div>
+        <input 
+          type="hidden"
+          ngModel="{{ editEducation?.idEdu }}"
+          name="idEdu"
+          class="form-control"
+          placeholder=""
+        >
+
+        <div class="form-group">
+          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel="{{editEducation?.imagenEdu}}"
+            name="imagenEdu"
+            class="form-control"
+            id="imagenEdu"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionEdu">Titulo</label>
+          <input type="text"
+            ngModel="{{editEducation?.descripcionEdu}}"
+            name="descripcionEdu"
+            class="form-control"
+            id="descripcionEdu"
+            placeholder="Titulo"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="fechaEdu">Fecha</label>
+          <input type="text"
+            ngModel="{{editEducation?.fechaEdu}}"
+            name="fechaEdu"
+            class="form-control"
+            id="fechaEdu"
+            placeholder="Fecha"
+            required
+          >
+        </div>
+
+      
+        <div class="model-footer">
+          <button
+            type="button"
+            id=""
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        <button
+        (click)="onUpdateEducation(editForm.value)"
+        type="submit"
+        data-dismiss="modal"
+        class="btn btn-primary"
+        > Añadir cambios
+        </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!--DELETE MODAL-->
+<div
+data-bs-toggle="modal" data-bs-target="#deleteModelLabel"
+class="modal fade"
+id="deleteEducationModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="educationDeleteModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="deleteEducationmodalLabel">Eliminar Educación</h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
+      >
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>¿Estás seguro de que queres eliminar {{deleteEducation?.tituloEdu}} de tu lista? </p>
+      
+
+      
+        <div class="model-footer">
+          <button
+            type="button"
+            id=""
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        <button
+        (click)="onDeleteEducation(deleteEducation!.idEdu)"
+        type="submit"
+        class="btn btn-danger"
+        data-dismiss="modal"
+        id="myModal"
+        > Eliminar
+        </button>
+        </div>
+    </div>
+    
+</div>
+</div>
+</div>
+</div>
 </div>

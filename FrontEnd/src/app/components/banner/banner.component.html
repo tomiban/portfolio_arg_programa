@@ -9,10 +9,10 @@
     </div>
   </div>
 
-  <div class="row" id="main-profile">
+  <div *ngIf="usuario" class="row" id="main-profile">
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg2">
       <img
-        src="../../../assets/foto-perfil.jpg"
+        src="{{usuario.fotoPerfil}}"
         alt="Foto de perfil"
         class="img-fluid border border-dark border-2 rounded-circle"
         id="profile-img"
@@ -21,9 +21,9 @@
   </div>
   <span class="espacio"></span>
   <div class="row" id="data-name">
-    <div class="col-xs-5 col-sm-5 col-md-12 col-lg12">
-      <h1>{{Persona.nombre}} {{Persona.apellido}}</h1>
-      <p>Desarollador Web</p>
+    <div *ngIf="usuario" class="col-xs-5 col-sm-5 col-md-12 col-lg12">
+     <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
+      <p>{{usuario.titulo}}</p>
       <span> Esperanza, Santa Fe. Argentina </span>
       <span><a href="a">Información de contacto</a></span>
     </div>
@@ -39,5 +39,14 @@
         <button type="button" class="btn btn-primary m-1">Más</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row m-4 p-2 bg-body rounded shadow ">
+  <div *ngIf="usuario" class="col-md-8">
+      <span>
+          <h2>Acerca de mi</h2>
+          <p>{{usuario.descripcion}}</p>
+      </span>
   </div>
 </div>
