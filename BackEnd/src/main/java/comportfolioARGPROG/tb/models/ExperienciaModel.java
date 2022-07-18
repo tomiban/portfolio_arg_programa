@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Experiencia {
+public class ExperienciaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idExp;
@@ -16,10 +16,10 @@ public class Experiencia {
     private String descripcionExp;
     private String imagenExp;
 
-    public Experiencia() {
+    public ExperienciaModel() {
     }
 
-    public Experiencia(Long idExp, String tituloExp, int fechaExp, String descripcionExp, String imagenExp) {
+    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, String descripcionExp, String imagenExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
         this.fechaExp = fechaExp;

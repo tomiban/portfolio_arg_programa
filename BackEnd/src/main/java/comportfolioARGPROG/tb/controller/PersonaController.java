@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package comportfolioARGPROG.tb.Controller;
+package comportfolioARGPROG.tb.controller;
 
 import comportfolioARGPROG.tb.Interface.IPersonaService;
 import comportfolioARGPROG.tb.entity.Persona;

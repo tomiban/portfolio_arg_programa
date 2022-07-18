@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/models/jwt-dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/models/login-usuario.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/models/nuevo-usuario.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/interceptor-service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/interceptor-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/token.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Dto/dtoExperiencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/RExperiencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/CExperiencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/entity/Experiencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/SExperiencia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/servicios/educacion.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/servicios/header.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Controller/PersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/PersonaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Experiencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/ExperienciaModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/repository/ExperienciaRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/security/MainSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/security/MainSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/ExperiencisService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +66,15 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\services" />
+      <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\Dto" />
+      <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\controller" />
+      <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\Repository" />
+      <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\Service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="TbApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comportfolioARGPROG.tb.TbApplication" />
