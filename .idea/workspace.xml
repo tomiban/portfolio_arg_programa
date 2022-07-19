@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/ExperienciaRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/ExperienciaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/models/experiencia.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/experiencia.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/CursosRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/CursosController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Cursos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/CursosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/entity/Experiencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/entity/Experiencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/ExperienciaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/ExperienciaModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/repository/EducacionRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/repository/EducacionRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/EducacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/EducacionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/banner/banner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/banner/banner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/experience/experience.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/servicios/interceptor-service.spec.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
