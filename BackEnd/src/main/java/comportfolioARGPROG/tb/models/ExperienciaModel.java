@@ -14,17 +14,15 @@ public class ExperienciaModel {
     private String tituloExp;
     private int fechaExp;
     private String descripcionExp;
-    private String imagenExp;
 
     public ExperienciaModel() {
     }
 
-    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, String descripcionExp, String imagenExp) {
+    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, String descripcionExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
         this.fechaExp = fechaExp;
         this.descripcionExp = descripcionExp;
-        this.imagenExp = imagenExp;
     }
 
     public Long getIdExp() {
@@ -59,11 +57,4 @@ public class ExperienciaModel {
         this.descripcionExp = descripcionExp;
     }
 
-    public String getImagenExp() {
-        return imagenExp;
-    }
-
-    public void setImagenExp(String imagenExp) {
-        this.imagenExp = imagenExp;
-    }
 }
