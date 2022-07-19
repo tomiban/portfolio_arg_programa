@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Cursos } from 'src/app/models/cursos';
 import { CursosService } from 'src/app/servicios/cursos.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-curses',
@@ -15,10 +16,16 @@ export class CursesComponent implements OnInit {
   public editCurso:Cursos | undefined;
   public deleteCurso:Cursos | undefined;
 
-  constructor(private cursosService:CursosService) { }
-
+  constructor(private cursosService:CursosService, private tokenService: TokenService) { }
+  isLogged = false;
   ngOnInit(): void {
-    this.getCursos();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.getCursos();
+    } else{
+      this.isLogged = false;
+    }
+    
   }
 
   public getCursos():void{
@@ -51,7 +58,7 @@ export class CursesComponent implements OnInit {
     button.click();
   }
   public onAddCurso(addForm: NgForm){
-    document.getElementById('add-education-form')?.click();
+    document.getElementById('add-cursos-form')?.click();
     this.cursosService.addCurso(addForm.value).subscribe({
       next:(response: Cursos) =>{
         console.log(response);

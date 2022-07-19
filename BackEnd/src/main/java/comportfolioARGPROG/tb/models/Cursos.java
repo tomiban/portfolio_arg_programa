@@ -13,6 +13,7 @@ public class Cursos {
         private int fechaCurso;
         private String descripcionCurso;
         private String imagenCurso;
+        
 
         public Cursos() {
         }

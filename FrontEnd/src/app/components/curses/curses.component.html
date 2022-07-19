@@ -2,10 +2,9 @@
   <div class="row edu main-container">
     <h2>Cursos y capacitaciones</h2>
     <div class="boton">
-      <button type="button" class="btn btn-link btn-sm" class="boton" (click)="onOpenModal('add')">
-        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus fa-lg"></i>
+      <button type="button" class="boton" (click)="onOpenModal('add')">
+        <i class="fa fa-plus fa-lg"></i>
         <span class="sr-only"> (current) </span>
-        </a>
       </button>
     </div>
   </div>
@@ -31,13 +30,13 @@
       </div>
 
       <h4>
-        <a href="#"
+        <a href="#" 
           ><img
             class="img-rounded m-1"
             width="65"
             height="60"
             src="{{cursos.imagenCurso}}"
-          />
+          /> 
           {{cursos.tituloCurso}}
         </a>
       </h4>
@@ -120,7 +119,7 @@ aria-hidden="true"
         <div class="model-footer">
           <button
             type="button"
-            id="add-curso-form"
+            id="add-cursos-form"
             class="btn btn-secondary"
             data-dismiss="modal"
           >
@@ -132,11 +131,11 @@ aria-hidden="true"
         type="submit"
         class="btn btn-primary"
         > Añadir cambios
-      </button>
+        </button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
-</div>
+  </div>
 </div>
 </div>
 

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-experience',
@@ -14,10 +15,17 @@ export class ExperienceComponent implements OnInit {
   public editExperiencia:Experiencia | undefined;
   public deleteExperiencia:Experiencia | undefined;
 
-  constructor(private experienciaService:ExperienciaService) { }
+  constructor(private experienciaService:ExperienciaService, private tokenService: TokenService) { }
 
+  isLogged = false;
   ngOnInit(): void {
-    this.getExperiencias();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.getExperiencias();
+    } else{
+      this.isLogged = false;
+    }
+    
   }
 
   public getExperiencias():void{
