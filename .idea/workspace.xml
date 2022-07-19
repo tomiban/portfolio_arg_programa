@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/CursosRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/CursosController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Cursos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/CursosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/ExperienciaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/ExperienciaModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/ExperienciaModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/curses/curses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/curses/curses.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
