@@ -5,4 +5,5 @@ export interface Cursos{
     fechaCurso: number;
     descripcionCurso: String;
     imagenCurso: String;
+    enlaceCurso: String;
 }

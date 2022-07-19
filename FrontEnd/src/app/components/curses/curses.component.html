@@ -30,7 +30,7 @@
       </div>
 
       <h4>
-        <a href="#" 
+        <a href="{{cursos.enlaceCurso}}" target="_blank"
           ><img
             class="img-rounded m-1"
             width="65"
@@ -69,13 +69,13 @@ aria-hidden="true"
     <div class="modal-body">
       <form #addForm='ngForm' (ngSubmit)="onAddCurso(addForm)">
         <div class="form-group">
-          <label for="tituloCurso">Institucion</label>
+          <label for="tituloCurso">Título</label>
           <input type="text"
             ngModel
             name="tituloCurso"
             class="form-control"
             id="tituloCurso"
-            placeholder="Institucion"
+            placeholder="Título"
             required
           >
         </div>
@@ -93,13 +93,13 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="descripcionCurso">Titulo</label>
+          <label for="institucionCurso">Institución</label>
           <input type="text"
             ngModel
-            name="descripcionCurso"
+            name="institucionCurso"
             class="form-control"
-            id="descripcionCurso"
-            placeholder="Titulo"
+            id="institucionCurso"
+            placeholder="Institución"
             required
           >
         </div>
@@ -112,6 +112,18 @@ aria-hidden="true"
             class="form-control"
             id="fechaCurso"
             placeholder="Fecha"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="enlaceCurso">Enlace del certificado o curso</label>
+          <input type="text"
+            ngModel
+            name="enlaceCurso"
+            class="form-control"
+            id="enlaceCurso"
+            placeholder="Url del certificado o sitio"
             required
           >
         </div>
@@ -164,7 +176,7 @@ aria-hidden="true"
     <div class="modal-body">
       <form #editForm='ngForm'>
         <div class="form-group">
-          <label for="tituloCurso">Institucion</label>
+          <label for="tituloCurso">Título</label>
           <input type="text"
             ngModel="{{editCurso?.tituloCurso}}"
             name="tituloCurso"
@@ -195,7 +207,7 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="descripcionCurso">Titulo</label>
+          <label for="descripcionCurso">Institución</label>
           <input type="text"
             ngModel="{{editCurso?.descripcionCurso}}"
             name="descripcionCurso"
@@ -214,6 +226,18 @@ aria-hidden="true"
             class="form-control"
             id="fechaCurso"
             placeholder="Fecha"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="enlaceCurso">Enlace del certificado o curso</label>
+          <input type="text"
+            ngModel
+            name="enlaceCurso"
+            class="form-control"
+            id="enlaceCurso"
+            placeholder="Url del certificado o sitio web"
             required
           >
         </div>

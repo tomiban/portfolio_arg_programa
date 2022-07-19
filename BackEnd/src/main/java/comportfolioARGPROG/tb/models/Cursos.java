@@ -13,20 +13,23 @@ public class Cursos {
         private int fechaCurso;
         private String descripcionCurso;
         private String imagenCurso;
-        
+
+        private String enlaceCurso;
 
         public Cursos() {
         }
 
-        public Cursos(Long idCurso, String tituloCurso, int fechaCurso, String descripcionCurso, String imagenCurso) {
+        public Cursos(Long idCurso, String tituloCurso, int fechaCurso, String descripcionCurso, String imagenCurso, String enlaceCurso) {
             this.idCurso = idCurso;
             this.tituloCurso = tituloCurso;
             this.fechaCurso = fechaCurso;
             this.descripcionCurso = descripcionCurso;
             this.imagenCurso = imagenCurso;
+            this.enlaceCurso = enlaceCurso;
         }
 
-        public Long getIdCurso() {
+
+    public Long getIdCurso() {
             return idCurso;
         }
 
@@ -65,4 +68,13 @@ public class Cursos {
         public void setImagenCurso(String imagenCurso) {
             this.imagenCurso = imagenCurso;
         }
+
+    public String getEnlaceCurso() {
+        return enlaceCurso;
+    }
+
+    public void setEnlaceCurso(String enlaceCurso) {
+        this.enlaceCurso = enlaceCurso;
+    }
+
 }
