@@ -4,7 +4,7 @@ export interface Educacion{
     tituloEdu: String;
     fechaInicioEdu: number;
     fechaFinEdu: number;
-    descripcionEdu: String;
+    institucionEdu: String;
     imagenEdu: String;
     enlaceEdu: String;
 }

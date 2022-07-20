@@ -41,8 +41,8 @@
         </a>
       </h4>
       
-      <small>{{cursos.descripcionCurso}}</small>
-      <p class="text-secondary">- Año: {{cursos.fechaCurso}}</p>
+      <small>{{cursos.institucionCurso}}</small>
+      <p class="text-secondary"> Año: {{cursos.fechaCurso}}</p>
     </div>
 
 <div
@@ -209,7 +209,7 @@ aria-hidden="true"
         <div class="form-group">
           <label for="descripcionCurso">Institución</label>
           <input type="text"
-            ngModel="{{editCurso?.descripcionCurso}}"
+            ngModel="{{editCurso?.institucionCurso}}"
             name="descripcionCurso"
             class="form-control"
             id="descripcionCurso"
