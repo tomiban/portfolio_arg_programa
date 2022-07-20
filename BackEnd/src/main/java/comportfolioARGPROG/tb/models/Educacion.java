@@ -14,6 +14,7 @@ public class Educacion {
     private int fechaEdu;
     private String descripcionEdu;
     private String imagenEdu;
+    
 
     public Educacion() {
     }

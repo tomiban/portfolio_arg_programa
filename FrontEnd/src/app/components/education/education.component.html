@@ -33,15 +33,14 @@
       <a href="#"
         ><img
           class="img-rounded m-1"
-          width="65"
-          height="60"
+          width="68"
+          height="64"
           src="{{education.imagenEdu}}"
         />
         {{education.tituloEdu}}
       </a>
     </h4>
-    
-    <p>{{education.descripcionEdu}}</p>
+    <small>{{education.descripcionEdu}}</small>
     <p class="text-secondary">- Año: {{education.fechaEdu}}</p>
   </div>
 
@@ -70,13 +69,13 @@ aria-hidden="true"
     <div class="modal-body">
       <form #addForm='ngForm' (ngSubmit)="onAddEducation(addForm)">
         <div class="form-group">
-          <label for="tituloEdu">Institucion</label>
+          <label for="tituloEdu">Título</label>
           <input type="text"
             ngModel
             name="tituloEdu"
             class="form-control"
             id="tituloEdu"
-            placeholder="Institucion"
+            placeholder="Título"
             required
           >
         </div>
@@ -94,13 +93,13 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="descripcionEdu">Titulo</label>
+          <label for="descripcionEdu">Institución</label>
           <input type="text"
             ngModel
             name="descripcionEdu"
             class="form-control"
             id="descripcionEdu"
-            placeholder="Titulo"
+            placeholder="Institución"
             required
           >
         </div>
@@ -166,7 +165,7 @@ aria-hidden="true"
     <div class="modal-body">
       <form #editForm='ngForm'>
         <div class="form-group">
-          <label for="tituloEdu">Institucion</label>
+          <label for="tituloEdu">Título</label>
           <input type="text"
             ngModel="{{editEducation?.tituloEdu}}"
             name="tituloEdu"
@@ -197,13 +196,13 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="descripcionEdu">Titulo</label>
+          <label for="descripcionEdu">Institución</label>
           <input type="text"
             ngModel="{{editEducation?.descripcionEdu}}"
             name="descripcionEdu"
             class="form-control"
             id="descripcionEdu"
-            placeholder="Titulo"
+            placeholder="Institución"
             required
           >
         </div>

@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/models/Cursos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolio/TB/TbApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Interface/IPersonaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/IPersonaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Repository/RExperiencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/Service/ImpPersonaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/CExperiencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/controller/PersonaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/entity/Experiencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/entity/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/comportfolioARGPROG/tb/services/SExperiencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/test/java/com/portfolio/TB/TbApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/education/education.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +71,9 @@
       <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\controller" />
       <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\Repository" />
       <recent name="C:\Users\Tomás Banchio\Documents\Angular\Portfolio_Arg_Programa\BackEnd\src\main\java\comportfolioARGPROG\tb\Service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="comportfolioARGPROG.tb.services" />
     </key>
   </component>
   <component name="RunManager">
