@@ -2,7 +2,9 @@
 export interface Educacion{
     idEdu: number;
     tituloEdu: String;
-    fechaEdu: number;
+    fechaInicioEdu: number;
+    fechaFinEdu: number;
     descripcionEdu: String;
     imagenEdu: String;
+    enlaceEdu: String;
 }

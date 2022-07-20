@@ -30,7 +30,7 @@
     </div>
     
     <h4>
-      <a href="#"
+      <a href="{{education.enlaceEdu}}" target="_blank"
         ><img
           class="img-rounded m-1"
           width="68"
@@ -41,7 +41,7 @@
       </a>
     </h4>
     <small>{{education.descripcionEdu}}</small>
-    <p class="text-secondary">- Año: {{education.fechaEdu}}</p>
+    <p class="text-secondary"> Año: {{education.fechaInicioEdu}} - {{education.fechaFinEdu}}</p>
   </div>
 
 <!--AGREGAR MODAL-->
@@ -80,17 +80,6 @@ aria-hidden="true"
           >
         </div>
 
-        <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
-          <input type="text"
-            ngModel
-            name="imagenEdu"
-            class="form-control"
-            id="imagenEdu"
-            placeholder="Url de la imagen"
-            required
-          >
-        </div>
 
         <div class="form-group">
           <label for="descripcionEdu">Institución</label>
@@ -105,17 +94,53 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaEdu">Fecha</label>
+          <label for="fechaEduInicio">Fecha Inicio</label>
           <input type="text"
             ngModel
-            name="fechaEdu"
+            name="fechaEduInicio"
             class="form-control"
-            id="fechaEdu"
-            placeholder="Fecha"
+            id="fechaEduInicio"
+            placeholder="Fecha Inicio"
             required
           >
         </div>
+
         
+        <div class="form-group">
+          <label for="fechaEduFin">Fecha Fin</label>
+          <input type="text"
+            ngModel
+            name="fechaEduFin"
+            class="form-control"
+            id="fechaEduFin"
+            placeholder="Fecha Fin"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel
+            name="imagenEdu"
+            class="form-control"
+            id="imagenEdu"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="enlaceEdu">Enlace</label>
+          <input type="text"
+            ngModel
+            name="enlaceEdu"
+            class="form-control"
+            id="enlaceEdu"
+            placeholder="Url de la institucion"
+            required
+          >
+        </div>
 
         <div class="model-footer">
           <button
@@ -184,18 +209,6 @@ aria-hidden="true"
         >
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
-          <input type="text"
-            ngModel="{{editEducation?.imagenEdu}}"
-            name="imagenEdu"
-            class="form-control"
-            id="imagenEdu"
-            placeholder="Url de la imagen"
-            required
-          >
-        </div>
-
-        <div class="form-group">
           <label for="descripcionEdu">Institución</label>
           <input type="text"
             ngModel="{{editEducation?.descripcionEdu}}"
@@ -208,17 +221,54 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaEdu">Fecha</label>
+          <label for="fechaInicioEdu">Fecha Inicio</label>
           <input type="text"
-            ngModel="{{editEducation?.fechaEdu}}"
-            name="fechaEdu"
+            ngModel="{{editEducation?.fechaInicioEdu}}"
+            name="fechaInicioEdu"
             class="form-control"
-            id="fechaEdu"
-            placeholder="Fecha"
+            id="fechaInicioEdu"
+            placeholder="Fecha Inicio"
             required
           >
         </div>
 
+        
+        <div class="form-group">
+          <label for="fechaFinEdu">Fecha Fin</label>
+          <input type="text"
+            ngModel="{{editEducation?.fechaFinEdu}}"
+            name="fechaFinEdu"
+            class="form-control"
+            id="fechaFinEdu"
+            placeholder="Fecha Fin"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel="{{editEducation?.imagenEdu}}"
+            name="imagenEdu"
+            class="form-control"
+            id="imagenEdu"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        
+        <div class="form-group">
+          <label for="enlaceEdu">Enlace</label>
+          <input type="text"
+            ngModel="{{editEducation?.enlaceEdu}}"
+            name="enlaceEdu"
+            class="form-control"
+            id="enlaceEdu"
+            placeholder="Url de la institucion"
+            required
+          >
+        </div>
       
         <div class="model-footer">
           <button

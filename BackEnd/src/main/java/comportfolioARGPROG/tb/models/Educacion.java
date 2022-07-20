@@ -11,20 +11,27 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEdu;
     private String tituloEdu;
-    private int fechaEdu;
+
+    private int fechaInicioEdu;
+
+    private int fechaFinEdu;
+
     private String descripcionEdu;
     private String imagenEdu;
-    
+
+    private String enlaceEdu;
 
     public Educacion() {
     }
 
-    public Educacion(Long idEdu, String tituloEdu, int fechaEdu, String descripcionEdu, String imagenEdu) {
+    public Educacion(Long idEdu, String tituloEdu, int fechaInicioEdu, int fechaFinEdu, String descripcionEdu, String imagenEdu, String enlaceEdu) {
         this.idEdu = idEdu;
         this.tituloEdu = tituloEdu;
-        this.fechaEdu = fechaEdu;
+        this.fechaInicioEdu = fechaInicioEdu;
+        this.fechaFinEdu = fechaFinEdu;
         this.descripcionEdu = descripcionEdu;
         this.imagenEdu = imagenEdu;
+        this.enlaceEdu = enlaceEdu;
     }
 
     public Long getIdEdu() {
@@ -43,12 +50,28 @@ public class Educacion {
         this.tituloEdu = tituloEdu;
     }
 
-    public int getFechaEdu() {
-        return fechaEdu;
+    public int getFechaInicioEdu() {
+        return fechaInicioEdu;
     }
 
-    public void setFechaEdu(int fechaEdu) {
-        this.fechaEdu = fechaEdu;
+    public void setFechaInicioEdu(int fechaInicioEdu) {
+        this.fechaInicioEdu = fechaInicioEdu;
+    }
+
+    public int getFechaFinEdu() {
+        return fechaFinEdu;
+    }
+
+    public void setFechaFinEdu(int fechaFinEdu) {
+        this.fechaFinEdu = fechaFinEdu;
+    }
+
+    public String getEnlaceEdu() {
+        return enlaceEdu;
+    }
+
+    public void setEnlaceEdu(String enlaceEdu) {
+        this.enlaceEdu = enlaceEdu;
     }
 
     public String getDescripcionEdu() {
