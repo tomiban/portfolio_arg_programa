@@ -1,3 +1,4 @@
+<!-- PROBAR NG IF IS LOGGED CON ESTO -->
 <div class="row m-4 p-1 bg-body rounded shadow">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg12">
     <div class="img-fluid">
@@ -27,23 +28,11 @@
       <span> Esperanza, Santa Fe. Argentina </span>
       <span><a href="a">Información de contacto</a></span>
     </div>
-
-    <div class="col-xs-5 col-sm-5 col-md-12 col-lg12">
-      <div id="info-action" class="container-fluid">
-        <button type="button" class="btn btn-primary m-1">
-          Tengo interés en
-        </button>
-        <button type="button" class="btn btn-primary m-1">
-          Añadir Sección
-        </button>
-        <button type="button" class="btn btn-primary m-1">Más</button>
-      </div>
-    </div>
   </div>
 </div>
 
 <div class="row m-4 p-2 bg-body rounded shadow ">
-  <div *ngIf="usuario" class="col-md-8">
+  <div *ngIf="usuario" class="col-md-12 col-lg-11">
       <span>
           <h2>Acerca de mi</h2>
           <p>{{usuario.descripcion}}</p>

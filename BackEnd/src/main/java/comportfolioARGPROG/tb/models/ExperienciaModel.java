@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class ExperienciaModel {
     @Id
@@ -13,18 +12,23 @@ public class ExperienciaModel {
     private Long idExp;
     private String tituloExp;
     private int fechaExp;
+
+    private int fechaFinExp;
+
     private String descripcionExp;
-    private String imagenExp;
+
+    private String empresaExp;
 
     public ExperienciaModel() {
     }
 
-    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, String descripcionExp, String imagenExp) {
+    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, int fechaFinExp, String descripcionExp, String empresaExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
         this.fechaExp = fechaExp;
+        this.fechaFinExp = fechaFinExp;
         this.descripcionExp = descripcionExp;
-        this.imagenExp = imagenExp;
+        this.empresaExp = empresaExp;
     }
 
     public Long getIdExp() {
@@ -47,6 +51,14 @@ public class ExperienciaModel {
         return fechaExp;
     }
 
+    public int getFechaFinExp() {
+        return fechaFinExp;
+    }
+
+    public void setFechaFinExp(int fechaFinExp) {
+        this.fechaFinExp = fechaFinExp;
+    }
+
     public void setFechaExp(int fechaExp) {
         this.fechaExp = fechaExp;
     }
@@ -59,11 +71,11 @@ public class ExperienciaModel {
         this.descripcionExp = descripcionExp;
     }
 
-    public String getImagenExp() {
-        return imagenExp;
+    public String getEmpresaExp() {
+        return empresaExp;
     }
 
-    public void setImagenExp(String imagenExp) {
-        this.imagenExp = imagenExp;
+    public void setEmpresaExp(String empresaExp) {
+        this.empresaExp = empresaExp;
     }
 }

@@ -1,52 +1,321 @@
 <div class="row m-4 p-1 bg-body rounded shadow">
-  <h2>Cursos y capacitaciones</h2>
-  <br><br><br>
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img src="../../../assets/cessi.png" width="60" height="60" />
-        Argentina Programa</a
-      >
-    </h4>
-    <small>Ministerio de desarrollo productivo y Cessi.</small>
-    <p class="text-secondary">Año 2021-2022</p>
+  <div class="row edu main-container">
+    <h2>Cursos y capacitaciones</h2>
+    <div class="boton">
+      <button type="button" class="boton" (click)="onOpenModal('add')">
+        <i class="fa fa-plus fa-lg"></i>
+        <span class="sr-only"> (current) </span>
+      </button>
+    </div>
   </div>
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img src="../../../assets/utnfrra.png" width="60" height="60" />
-        Diplomatura en Programación Web FullStack</a
+
+  <div id="main-container">
+    <div class="col-md-12 col-lg-12" *ngFor="let cursos of cursos">
+      <div class="text-center">
+        <a 
+        (click)="onOpenModal('edit',cursos)"
+        class="btn-sm btn-primary tooltips m-1"
+        data-placement="top"
+        data-toogle="tooltip"
+        data-original-title="Edit">
+      <i class="fa fa-pencil"></i></a>
+  
+      <a 
+        (click)="onOpenModal('delete',cursos)"
+        class="btn-sm btn-danger tooltips m-1"
+        data-placement="top"
+        data-toogle="tooltip"
+        data-original-title="Delete">
+      <i class="fa fa-times"></i></a>
+      </div>
+
+      <h4>
+        <a href="{{cursos.enlaceCurso}}" target="_blank"
+          ><img
+            class="img-rounded m-1"
+            width="65"
+            height="60"
+            src="{{cursos.imagenCurso}}"
+          /> 
+          {{cursos.tituloCurso}}
+        </a>
+      </h4>
+      
+      <small>{{cursos.institucionCurso}}</small>
+      <p class="text-secondary"> Año: {{cursos.fechaCurso}}</p>
+    </div>
+
+<div
+class="modal fade"
+id="addCursosModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="addCursosModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addCursosmodalLabel">Añadir curso</h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
       >
-    </h4>
-    <small
-      >UTN Facultad Regional Resistencia. Modalidad a distancia. 210.00
-      hs.</small
-    >
-    <p class="text-secondary">Año 2021</p>
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #addForm='ngForm' (ngSubmit)="onAddCurso(addForm)">
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="tituloCurso"
+            class="form-control"
+            id="tituloCurso"
+            placeholder="Título"
+            required
+          >
+        </div>
+
+        
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="institucionCurso"
+            class="form-control"
+            id="institucionCurso"
+            placeholder="Institución"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="fechaCurso"
+            class="form-control"
+            id="fechaCurso"
+            placeholder="Fecha"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="imagenCurso"
+            class="form-control"
+            id="imagenCurso"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="enlaceCurso"
+            class="form-control"
+            id="enlaceCurso"
+            placeholder="Url del certificado o sitio web del curso"
+            required
+          >
+        </div>
+
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          [disabled]="addForm.invalid"
+          type="submit"
+          class="btn btn-success m-1"
+          > Añadir
+          </button>
+
+          <button
+            type="button"
+            id="add-cursos-form"
+            class="btn btn-secondary m-1"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img src="../../../assets/fcc_blancol.svg" width="60" height="60" />
-        Responsive Web Design</a
+</div>
+</div>
+
+<!--EDITAR MODAL-->
+<div
+class="modal fade"
+id="editCursosModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="cursosEditModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="updateCursosmodalLabel">Editar Curso  {{editCurso?.tituloCurso}} </h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
       >
-    </h4>
-    <small
-      >FreeCodeCamp. Developer Certification. 300 hours of coursework.</small
-    >
-    <p class="text-secondary">Año 2021</p>
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #editForm='ngForm'>
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.tituloCurso}}"
+            name="tituloCurso"
+            class="form-control"
+            id="tituloCurso"
+            placeholder="Institucion"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.institucionCurso}}"
+            name="descripcionCurso"
+            class="form-control"
+            id="descripcionCurso"
+            placeholder="Titulo"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.fechaCurso}}"
+            name="fechaCurso"
+            class="form-control"
+            id="fechaCurso"
+            placeholder="Fecha"
+            required
+          >
+        </div>
+
+
+        <input 
+          type="hidden"
+          ngModel="{{ editCurso?.idCurso }}"
+          name="idCurso"
+          class="form-control"
+          placeholder=""
+        >
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.imagenCurso}}"
+            name="imagenCurso"
+            class="form-control"
+            id="imagenCurso"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.enlaceCurso}}"
+            name="enlaceCurso"
+            class="form-control"
+            id="enlaceCurso"
+            placeholder="Url del certificado o sitio web del curso"
+            required
+          >
+        </div>
+
+      
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          (click)="onUpdateCurso(editForm.value)"
+          type="submit"
+          data-dismiss="modal"
+          class="btn btn-success m-1"
+          > Añadir cambios
+          </button>
+
+          <button
+            type="button"
+            id=""
+            class="btn btn-secondary m-1"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        </div>
+      </form>
+    </div>
+
+    
+
   </div>
-  <div class="col-md-12 col-lg-12">
-    <h4>
-      <a href="#"
-        ><img src="../../../assets/utnfrra.png" width="60" height="60" />
-        Programación web con PHP y MySQL</a
+</div>
+</div>
+
+
+<!--DELETE MODAL-->
+<div
+data-bs-toggle="modal" data-bs-target="#deleteModelLabel"
+class="modal fade"
+id="deleteCursosModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="cursosDeleteModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="deleteCursosmodalLabel">Eliminar Curso</h5>
+      <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="close"
       >
-    </h4>
-    <small
-      >UTN Facultad Regional Resistencia. Modalidad a distancia. 120.00
-      hs.</small
-    >
-    <p class="text-secondary">Año 2021</p>
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>¿Estás seguro de que queres eliminar {{deleteCurso?.tituloCurso}} de tu lista? </p>
+      
+        <div class="model-footer">
+          <button
+            type="button"
+            id=""
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+        Cerrar
+        </button>
+
+        <button
+        (click)="onDeleteCurso(deleteCurso!.idCurso)"
+        type="submit"
+        class="btn btn-danger"
+        data-dismiss="modal"
+        id="myModal"
+        > Eliminar
+        </button>
+        </div>
+    </div>
   </div>
+</div>
+</div>
+</div>
 </div>

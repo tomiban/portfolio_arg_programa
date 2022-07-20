@@ -1,7 +1,7 @@
 package comportfolioARGPROG.tb.services;
 
 import comportfolioARGPROG.tb.models.Educacion;
-import comportfolioARGPROG.tb.repository.EducacionRepo;
+import comportfolioARGPROG.tb.Repository.EducacionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

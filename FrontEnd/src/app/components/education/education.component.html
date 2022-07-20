@@ -2,10 +2,9 @@
   <div class="row edu main-container">
     <h2>Educación</h2>
     <div class="boton">
-      <button type="button" class="btn btn-link btn-sm" class="boton" (click)="onOpenModal('add')">
-        <a  class="nav-link" data-placement="top"> <i class="fa fa-plus fa-lg"></i>
+      <button type="button" class="boton" (click)="onOpenModal('add')">
+        <i class="fa fa-plus fa-lg"></i>
         <span class="sr-only"> (current) </span>
-        </a>
       </button>
     </div>
   </div>
@@ -15,7 +14,7 @@
     <div class="text-center">
       <a 
       (click)="onOpenModal('edit',education)"
-      class="btn-sm btn-primary tooltips"
+      class="btn-sm btn-primary tooltips m-1"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Edit">
@@ -23,7 +22,7 @@
 
     <a 
       (click)="onOpenModal('delete',education)"
-      class="btn-sm btn-danger tooltips"
+      class="btn-sm btn-danger tooltips m-1"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Delete">
@@ -31,19 +30,18 @@
     </div>
     
     <h4>
-      <a href="#"
+      <a href="{{education.enlaceEdu}}" target="_blank"
         ><img
           class="img-rounded m-1"
-          width="65"
-          height="60"
+          width="68"
+          height="64"
           src="{{education.imagenEdu}}"
         />
         {{education.tituloEdu}}
       </a>
     </h4>
-    
-    <p>{{education.descripcionEdu}}</p>
-    <p class="text-secondary">- Año: {{education.fechaEdu}}</p>
+    <small>{{education.institucionEdu}}</small>
+    <p class="text-secondary"> Año: {{education.fechaInicioEdu}} - {{education.fechaFinEdu}}</p>
   </div>
 
 <!--AGREGAR MODAL-->
@@ -71,19 +69,52 @@ aria-hidden="true"
     <div class="modal-body">
       <form #addForm='ngForm' (ngSubmit)="onAddEducation(addForm)">
         <div class="form-group">
-          <label for="tituloEdu">Institucion</label>
           <input type="text"
             ngModel
             name="tituloEdu"
             class="form-control"
             id="tituloEdu"
-            placeholder="Institucion"
+            placeholder="Título"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="descripcionEdu"
+            class="form-control"
+            id="descripcionEdu"
+            placeholder="Institución"
             required
           >
         </div>
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel
+            name="fechaEduInicio"
+            class="form-control"
+            id="fechaEduInicio"
+            placeholder="Fecha Inicio"
+            required
+          >
+        </div>
+
+        
+        <div class="form-group">
+          <input type="text"
+            ngModel
+            name="fechaEduFin"
+            class="form-control"
+            id="fechaEduFin"
+            placeholder="Fecha Fin"
+            required
+          >
+        </div>
+
+        <div class="form-group">
           <input type="text"
             ngModel
             name="imagenEdu"
@@ -95,54 +126,41 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="descripcionEdu">Titulo</label>
           <input type="text"
             ngModel
-            name="descripcionEdu"
+            name="enlaceEdu"
             class="form-control"
-            id="descripcionEdu"
-            placeholder="Titulo"
+            id="enlaceEdu"
+            placeholder="Url de la institucion"
             required
           >
         </div>
 
-        <div class="form-group">
-          <label for="fechaEdu">Fecha</label>
-          <input type="text"
-            ngModel
-            name="fechaEdu"
-            class="form-control"
-            id="fechaEdu"
-            placeholder="Fecha"
-            required
-          >
-        </div>
+        <div class="model-footer d-flex justify-content-center">
+          
+        <button
+        [disabled]="addForm.invalid"
+        type="submit"
+        class="btn btn-success m-1"
+        > Añadir
+        </button>
 
-       
-
-        <div class="model-footer">
-          <button
+        <button
             type="button"
             id="add-education-form"
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        [disabled]="addForm.invalid"
-        type="submit"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
-
   </div>
 </div>
 </div>
+
 <!--EDITAR MODAL-->
 <div
 class="modal fade"
@@ -168,7 +186,6 @@ aria-hidden="true"
     <div class="modal-body">
       <form #editForm='ngForm'>
         <div class="form-group">
-          <label for="tituloEdu">Institucion</label>
           <input type="text"
             ngModel="{{editEducation?.tituloEdu}}"
             name="tituloEdu"
@@ -187,7 +204,40 @@ aria-hidden="true"
         >
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
+          <input type="text"
+            ngModel="{{editEducation?.institucionEdu}}"
+            name="descripcionEdu"
+            class="form-control"
+            id="descripcionEdu"
+            placeholder="Institución"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editEducation?.fechaInicioEdu}}"
+            name="fechaInicioEdu"
+            class="form-control"
+            id="fechaInicioEdu"
+            placeholder="Fecha Inicio"
+            required
+          >
+        </div>
+
+        
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editEducation?.fechaFinEdu}}"
+            name="fechaFinEdu"
+            class="form-control"
+            id="fechaFinEdu"
+            placeholder="Fecha Fin"
+            required
+          >
+        </div>
+
+        <div class="form-group">
           <input type="text"
             ngModel="{{editEducation?.imagenEdu}}"
             name="imagenEdu"
@@ -197,49 +247,37 @@ aria-hidden="true"
             required
           >
         </div>
-
+        
         <div class="form-group">
-          <label for="descripcionEdu">Titulo</label>
           <input type="text"
-            ngModel="{{editEducation?.descripcionEdu}}"
-            name="descripcionEdu"
+            ngModel="{{editEducation?.enlaceEdu}}"
+            name="enlaceEdu"
             class="form-control"
-            id="descripcionEdu"
-            placeholder="Titulo"
+            id="enlaceEdu"
+            placeholder="Url de la institucion"
             required
           >
         </div>
-
-        <div class="form-group">
-          <label for="fechaEdu">Fecha</label>
-          <input type="text"
-            ngModel="{{editEducation?.fechaEdu}}"
-            name="fechaEdu"
-            class="form-control"
-            id="fechaEdu"
-            placeholder="Fecha"
-            required
-          >
-        </div>
-
       
-        <div class="model-footer">
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          (click)="onUpdateEducation(editForm.value)"
+          type="submit"
+          data-dismiss="modal"
+          class="btn btn-success m-1"
+          > Añadir cambios
+          </button>
+
           <button
             type="button"
             id=""
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        (click)="onUpdateEducation(editForm.value)"
-        type="submit"
-        data-dismiss="modal"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
@@ -296,7 +334,6 @@ aria-hidden="true"
         </button>
         </div>
     </div>
-    
 </div>
 </div>
 </div>
