@@ -12,16 +12,23 @@ public class ExperienciaModel {
     private Long idExp;
     private String tituloExp;
     private int fechaExp;
+
+    private int fechaFinExp;
+
     private String descripcionExp;
+
+    private String empresaExp;
 
     public ExperienciaModel() {
     }
 
-    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, String descripcionExp) {
+    public ExperienciaModel(Long idExp, String tituloExp, int fechaExp, int fechaFinExp, String descripcionExp, String empresaExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
         this.fechaExp = fechaExp;
+        this.fechaFinExp = fechaFinExp;
         this.descripcionExp = descripcionExp;
+        this.empresaExp = empresaExp;
     }
 
     public Long getIdExp() {
@@ -44,6 +51,14 @@ public class ExperienciaModel {
         return fechaExp;
     }
 
+    public int getFechaFinExp() {
+        return fechaFinExp;
+    }
+
+    public void setFechaFinExp(int fechaFinExp) {
+        this.fechaFinExp = fechaFinExp;
+    }
+
     public void setFechaExp(int fechaExp) {
         this.fechaExp = fechaExp;
     }
@@ -56,4 +71,11 @@ public class ExperienciaModel {
         this.descripcionExp = descripcionExp;
     }
 
+    public String getEmpresaExp() {
+        return empresaExp;
+    }
+
+    public void setEmpresaExp(String empresaExp) {
+        this.empresaExp = empresaExp;
+    }
 }

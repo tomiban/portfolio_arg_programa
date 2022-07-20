@@ -14,7 +14,7 @@
       <div class="text-center">
         <a 
         (click)="onOpenModal('edit',cursos)"
-        class="btn-sm btn-primary tooltips"
+        class="btn-sm btn-primary tooltips m-1"
         data-placement="top"
         data-toogle="tooltip"
         data-original-title="Edit">
@@ -22,7 +22,7 @@
   
       <a 
         (click)="onOpenModal('delete',cursos)"
-        class="btn-sm btn-danger tooltips"
+        class="btn-sm btn-danger tooltips m-1"
         data-placement="top"
         data-toogle="tooltip"
         data-original-title="Delete">
@@ -69,7 +69,6 @@ aria-hidden="true"
     <div class="modal-body">
       <form #addForm='ngForm' (ngSubmit)="onAddCurso(addForm)">
         <div class="form-group">
-          <label for="tituloCurso">Título</label>
           <input type="text"
             ngModel
             name="tituloCurso"
@@ -80,20 +79,8 @@ aria-hidden="true"
           >
         </div>
 
+        
         <div class="form-group">
-          <label for="imagenCurso">Imagen</label>
-          <input type="text"
-            ngModel
-            name="imagenCurso"
-            class="form-control"
-            id="imagenCurso"
-            placeholder="Url de la imagen"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label for="institucionCurso">Institución</label>
           <input type="text"
             ngModel
             name="institucionCurso"
@@ -105,7 +92,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaCurso">Fecha</label>
           <input type="text"
             ngModel
             name="fechaCurso"
@@ -117,33 +103,45 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="enlaceCurso">Enlace del certificado o curso</label>
+          <input type="text"
+            ngModel
+            name="imagenCurso"
+            class="form-control"
+            id="imagenCurso"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
           <input type="text"
             ngModel
             name="enlaceCurso"
             class="form-control"
             id="enlaceCurso"
-            placeholder="Url del certificado o sitio"
+            placeholder="Url del certificado o sitio web del curso"
             required
           >
         </div>
 
-        <div class="model-footer">
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          [disabled]="addForm.invalid"
+          type="submit"
+          class="btn btn-success m-1"
+          > Añadir
+          </button>
+
           <button
             type="button"
             id="add-cursos-form"
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        [disabled]="addForm.invalid"
-        type="submit"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
@@ -176,7 +174,6 @@ aria-hidden="true"
     <div class="modal-body">
       <form #editForm='ngForm'>
         <div class="form-group">
-          <label for="tituloCurso">Título</label>
           <input type="text"
             ngModel="{{editCurso?.tituloCurso}}"
             name="tituloCurso"
@@ -186,28 +183,8 @@ aria-hidden="true"
             required
           >
         </div>
-        <input 
-          type="hidden"
-          ngModel="{{ editCurso?.idCurso }}"
-          name="idCurso"
-          class="form-control"
-          placeholder=""
-        >
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
-          <input type="text"
-            ngModel="{{editCurso?.imagenCurso}}"
-            name="imagenCurso"
-            class="form-control"
-            id="imagenCurso"
-            placeholder="Url de la imagen"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label for="descripcionCurso">Institución</label>
           <input type="text"
             ngModel="{{editCurso?.institucionCurso}}"
             name="descripcionCurso"
@@ -219,7 +196,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaCurso">Fecha</label>
           <input type="text"
             ngModel="{{editCurso?.fechaCurso}}"
             name="fechaCurso"
@@ -230,36 +206,57 @@ aria-hidden="true"
           >
         </div>
 
+
+        <input 
+          type="hidden"
+          ngModel="{{ editCurso?.idCurso }}"
+          name="idCurso"
+          class="form-control"
+          placeholder=""
+        >
+
         <div class="form-group">
-          <label for="enlaceCurso">Enlace del certificado o curso</label>
           <input type="text"
-            ngModel
+            ngModel="{{editCurso?.imagenCurso}}"
+            name="imagenCurso"
+            class="form-control"
+            id="imagenCurso"
+            placeholder="Url de la imagen"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <input type="text"
+            ngModel="{{editCurso?.enlaceCurso}}"
             name="enlaceCurso"
             class="form-control"
             id="enlaceCurso"
-            placeholder="Url del certificado o sitio web"
+            placeholder="Url del certificado o sitio web del curso"
             required
           >
         </div>
 
       
-        <div class="model-footer">
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          (click)="onUpdateCurso(editForm.value)"
+          type="submit"
+          data-dismiss="modal"
+          class="btn btn-success m-1"
+          > Añadir cambios
+          </button>
+
           <button
             type="button"
             id=""
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        (click)="onUpdateCurso(editForm.value)"
-        type="submit"
-        data-dismiss="modal"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
@@ -296,8 +293,6 @@ aria-hidden="true"
     </div>
     <div class="modal-body">
       <p>¿Estás seguro de que queres eliminar {{deleteCurso?.tituloCurso}} de tu lista? </p>
-      
-
       
         <div class="model-footer">
           <button

@@ -15,7 +15,7 @@
       <div class="text-center">
         <a 
         (click)="onOpenModal('edit',experiencia)"
-        class="btn-sm btn-primary tooltips"
+        class="btn-sm btn-primary tooltips m-1"
         data-placement="top"
         data-toogle="tooltip"
         data-original-title="Edit">
@@ -23,21 +23,22 @@
   
       <a 
         (click)="onOpenModal('delete',experiencia)"
-        class="btn-sm btn-danger tooltips"
+        class="btn-sm btn-danger tooltips m-1"
         data-placement="top"
         data-toogle="tooltip"
         data-original-title="Delete">
       <i class="fa fa-times"></i></a>
       </div>
       
+      <div>
       <h4>
           {{experiencia.tituloExp}}
       </h4>
-      
-      <p>{{experiencia.descripcionExp}}</p>
-
-      <p class="text-secondary">Año: {{experiencia.fechaExp}}</p>
-
+      <span>|</span>
+      <h5>            {{experiencia.empresaExp}}</h5> 
+    </div>
+      <small>{{experiencia.descripcionExp}}</small>
+      <p class="text-secondary">Año: {{experiencia.fechaExp}} - {{experiencia.fechaFinExp}}</p>
     </div>
   
   
@@ -65,21 +66,28 @@
       <div class="modal-body">
         <form #addForm='ngForm' (ngSubmit)="onAddExperiencia(addForm)">
           <div class="form-group">
-            <label for="tituloExp">Empresa</label>
             <input type="text"
               ngModel
               name="tituloExp"
               class="form-control"
               id="tituloExp"
+              placeholder="Título"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <input type="text"
+              ngModel
+              name="empresaExp"
+              class="form-control"
+              id="empresaExp"
               placeholder="Empresa"
               required
             >
           </div>
   
-          
-  
           <div class="form-group">
-            <label for="descripcionExp">Descripcion</label>
             <input type="text"
               ngModel
               name="descripcionExp"
@@ -89,37 +97,50 @@
               required
             >
           </div>
-  
-         
+    
           <div class="form-group">
-            <label for="fechaExp">Fecha</label>
             <input type="text"
               ngModel
               name="fechaExp"
               class="form-control"
               id="fechaExp"
-              placeholder="Fecha"
+              placeholder="Fecha inicio"
               required
             >
           </div>
 
-  
+          <div class="form-group">
+            <input type="text"
+              ngModel
+              name="fechaFinExp"
+              class="form-control"
+              id="fechaFinExp"
+              placeholder="Fecha fin"
+              required
+            >
+          </div>
+
           <div class="model-footer">
+
+          <div class="d-flex justify-content-center">
+            <button
+            [disabled]="addForm.invalid"
+            type="submit"
+            class="btn btn-success m-2"
+            > Añadir
+            </button>
+
             <button
               type="button"
               id="add-experiencia-form"
-              class="btn btn-secondary"
+              class="btn btn-secondary m-2"
               data-dismiss="modal"
             >
           Cerrar
           </button>
+          </div>
+            
   
-          <button
-          [disabled]="addForm.invalid"
-          type="submit"
-          class="btn btn-primary"
-          > Añadir cambios
-          </button>
           </div>
         </form>
       </div>
@@ -152,16 +173,27 @@
       <div class="modal-body">
         <form #editForm='ngForm'>
           <div class="form-group">
-            <label for="tituloExp">Institucion</label>
             <input type="text"
               ngModel="{{editExperiencia?.tituloExp}}"
               name="tituloExp"
               class="form-control"
               id="tituloExp"
-              placeholder="Institucion"
+              placeholder="Título"
               required
             >
           </div>
+
+          <div class="form-group">
+            <input type="text"
+              ngModel="{{editExperiencia?.empresaExp}}"
+              name="empresaExp"
+              class="form-control"
+              id="empresaExp"
+              placeholder="Empresa"
+              required
+            >
+          </div>
+
           <input 
             type="hidden"
             ngModel="{{ editExperiencia?.idExp }}"
@@ -170,48 +202,60 @@
             placeholder=""
           >
 
-  
           <div class="form-group">
-            <label for="descripcionExp">Titulo</label>
             <input type="text"
               ngModel="{{editExperiencia?.descripcionExp}}"
               name="descripcionExp"
               class="form-control"
               id="descripcionExp"
-              placeholder="Titulo"
+              placeholder="Descripcion del empleo"
               required
             >
           </div>
   
           <div class="form-group">
-            <label for="fechaExp">Fecha</label>
             <input type="text"
               ngModel="{{editExperiencia?.fechaExp}}"
               name="fechaExp"
               class="form-control"
               id="fechaExp"
-              placeholder="Fecha"
+              placeholder="Fecha inicio"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <input type="text"
+              ngModel="{{editExperiencia?.fechaFinExp}}"
+              name="fechaFinExp"
+              class="form-control"
+              id="fechaFinExp"
+              placeholder="Fecha fin"
               required
             >
           </div>
         
           <div class="model-footer">
-            <button
-              type="button"
-              id=""
-              class="btn btn-secondary"
+
+            <div class="d-flex justify-content-center">
+              <button
+              (click)="onUpdateExperiencia(editForm.value)"
+              type="submit"
               data-dismiss="modal"
-            >
-          Cerrar
-          </button>
+              class="btn btn-success m-2"
+              > Añadir cambios
+              </button>
   
-          <button
-          (click)="onUpdateExperiencia(editForm.value)"
-          type="submit"
-          data-dismiss="modal"
-          class="btn btn-primary"
-          > Añadir cambios
-          </button>
+              <button
+                type="button"
+                id=""
+                class="btn btn-secondary m-2"
+                data-dismiss="modal"
+              >
+            Cerrar
+            </button>
+            </div>
+            
           </div>
         </form>
       </div>
@@ -245,13 +289,11 @@
       <div class="modal-body">
         <p>¿Estás seguro de que queres eliminar {{deleteExperiencia?.tituloExp}} de tu lista? </p>
         
-  
-        
-          <div class="model-footer">
+          <div class="model-footer d-flex justify-content-center">
             <button
               type="button"
               id=""
-              class="btn btn-secondary"
+              class="btn btn-secondary m-2"
               data-dismiss="modal"
             >
           Cerrar
@@ -260,7 +302,7 @@
           <button
           (click)="onDeleteExperiencia(deleteExperiencia!.idExp)"
           type="submit"
-          class="btn btn-danger"
+          class="btn btn-danger m-2"
           data-dismiss="modal"
           id="myModal"
           > Eliminar

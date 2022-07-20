@@ -14,7 +14,7 @@
     <div class="text-center">
       <a 
       (click)="onOpenModal('edit',education)"
-      class="btn-sm btn-primary tooltips"
+      class="btn-sm btn-primary tooltips m-1"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Edit">
@@ -22,7 +22,7 @@
 
     <a 
       (click)="onOpenModal('delete',education)"
-      class="btn-sm btn-danger tooltips"
+      class="btn-sm btn-danger tooltips m-1"
       data-placement="top"
       data-toogle="tooltip"
       data-original-title="Delete">
@@ -69,7 +69,6 @@ aria-hidden="true"
     <div class="modal-body">
       <form #addForm='ngForm' (ngSubmit)="onAddEducation(addForm)">
         <div class="form-group">
-          <label for="tituloEdu">Título</label>
           <input type="text"
             ngModel
             name="tituloEdu"
@@ -82,7 +81,6 @@ aria-hidden="true"
 
 
         <div class="form-group">
-          <label for="descripcionEdu">Institución</label>
           <input type="text"
             ngModel
             name="descripcionEdu"
@@ -94,7 +92,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaEduInicio">Fecha Inicio</label>
           <input type="text"
             ngModel
             name="fechaEduInicio"
@@ -107,7 +104,6 @@ aria-hidden="true"
 
         
         <div class="form-group">
-          <label for="fechaEduFin">Fecha Fin</label>
           <input type="text"
             ngModel
             name="fechaEduFin"
@@ -119,7 +115,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
           <input type="text"
             ngModel
             name="imagenEdu"
@@ -131,7 +126,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="enlaceEdu">Enlace</label>
           <input type="text"
             ngModel
             name="enlaceEdu"
@@ -142,22 +136,24 @@ aria-hidden="true"
           >
         </div>
 
-        <div class="model-footer">
-          <button
+        <div class="model-footer d-flex justify-content-center">
+          
+        <button
+        [disabled]="addForm.invalid"
+        type="submit"
+        class="btn btn-success m-1"
+        > Añadir
+        </button>
+
+        <button
             type="button"
             id="add-education-form"
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        [disabled]="addForm.invalid"
-        type="submit"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
@@ -190,7 +186,6 @@ aria-hidden="true"
     <div class="modal-body">
       <form #editForm='ngForm'>
         <div class="form-group">
-          <label for="tituloEdu">Título</label>
           <input type="text"
             ngModel="{{editEducation?.tituloEdu}}"
             name="tituloEdu"
@@ -209,7 +204,6 @@ aria-hidden="true"
         >
 
         <div class="form-group">
-          <label for="descripcionEdu">Institución</label>
           <input type="text"
             ngModel="{{editEducation?.institucionEdu}}"
             name="descripcionEdu"
@@ -221,7 +215,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="fechaInicioEdu">Fecha Inicio</label>
           <input type="text"
             ngModel="{{editEducation?.fechaInicioEdu}}"
             name="fechaInicioEdu"
@@ -234,7 +227,6 @@ aria-hidden="true"
 
         
         <div class="form-group">
-          <label for="fechaFinEdu">Fecha Fin</label>
           <input type="text"
             ngModel="{{editEducation?.fechaFinEdu}}"
             name="fechaFinEdu"
@@ -246,7 +238,6 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="imagenEdu">Imagen</label>
           <input type="text"
             ngModel="{{editEducation?.imagenEdu}}"
             name="imagenEdu"
@@ -256,10 +247,8 @@ aria-hidden="true"
             required
           >
         </div>
-
         
         <div class="form-group">
-          <label for="enlaceEdu">Enlace</label>
           <input type="text"
             ngModel="{{editEducation?.enlaceEdu}}"
             name="enlaceEdu"
@@ -270,23 +259,25 @@ aria-hidden="true"
           >
         </div>
       
-        <div class="model-footer">
+        <div class="model-footer d-flex justify-content-center">
+
+          <button
+          (click)="onUpdateEducation(editForm.value)"
+          type="submit"
+          data-dismiss="modal"
+          class="btn btn-success m-1"
+          > Añadir cambios
+          </button>
+
           <button
             type="button"
             id=""
-            class="btn btn-secondary"
+            class="btn btn-secondary m-1"
             data-dismiss="modal"
           >
         Cerrar
         </button>
 
-        <button
-        (click)="onUpdateEducation(editForm.value)"
-        type="submit"
-        data-dismiss="modal"
-        class="btn btn-primary"
-        > Añadir cambios
-        </button>
         </div>
       </form>
     </div>
