@@ -19,9 +19,9 @@ export class CursesComponent implements OnInit {
   constructor(private cursosService:CursosService, private tokenService: TokenService) { }
   isLogged = false;
   ngOnInit(): void {
+    this.getCursos();
     if(this.tokenService.getToken()){
       this.isLogged = true;
-      this.getCursos();
     } else{
       this.isLogged = false;
     }

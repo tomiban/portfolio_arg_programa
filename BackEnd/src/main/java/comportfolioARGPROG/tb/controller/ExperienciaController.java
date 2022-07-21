@@ -4,6 +4,7 @@ import comportfolioARGPROG.tb.models.ExperienciaModel;
 import comportfolioARGPROG.tb.services.ExperienciaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
             this.experienciaService = experienciaService;
         }
 
+        //@PreAuthorize("hasRole('ADMIN')")
         @PutMapping("/update")
         public ResponseEntity<ExperienciaModel> editarExperiencia(@RequestBody ExperienciaModel experiencia){
             ExperienciaModel updateExperiencia=experienciaService.editarExperiencia(experiencia);
@@ -29,13 +31,13 @@ import java.util.List;
             List<ExperienciaModel>  experiencias =  experienciaService.buscarExperiencias();
             return new ResponseEntity<>(experiencias, HttpStatus.OK);
         }
-
+        //  @PreAuthorize("hasRole('ADMIN')")
         @PostMapping("/add")
         public ResponseEntity<ExperienciaModel> crearExperiencia(@RequestBody ExperienciaModel experiencia){
             ExperienciaModel nuevaExperiencia=experienciaService.addExperiencia(experiencia);
             return new ResponseEntity<>(nuevaExperiencia,HttpStatus.CREATED);
         }
-
+        //  @PreAuthorize("hasRole('ADMIN')")
         @DeleteMapping("/delete/{id}")
         public ResponseEntity<?> borrarEducacion(@PathVariable("id") Long id){
             experienciaService.borrarExperiencia(id);

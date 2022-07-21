@@ -1,7 +1,7 @@
 <div class="row m-4 p-1 bg-body rounded shadow">
   <div class="row edu main-container">
     <h2>Educación</h2>
-    <div class="boton">
+    <div class="boton" *ngIf="isLogged">
       <button type="button" class="boton" (click)="onOpenModal('add')">
         <i class="fa fa-plus fa-lg"></i>
         <span class="sr-only"> (current) </span>
@@ -11,7 +11,7 @@
 
   <div id="main-container">
   <div class="col-md-12 col-lg-12" *ngFor="let education of educacion">
-    <div class="text-center">
+    <div class="text-center" *ngIf="isLogged">
       <a 
       (click)="onOpenModal('edit',education)"
       class="btn-sm btn-primary tooltips m-1"
@@ -56,7 +56,7 @@ aria-hidden="true"
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="addEducationmodalLabel">Añadir educación</h5>
+      <h5 class="modal-title" id="addEducationmodalLabel">Añadir Educación</h5>
       <button
       type="button"
       class="close"
@@ -314,11 +314,11 @@ aria-hidden="true"
       
 
       
-        <div class="model-footer">
+        <div class="model-footer d-flex justify-content-center">
           <button
             type="button"
             id=""
-            class="btn btn-secondary"
+            class="btn btn-secondary m-2"
             data-dismiss="modal"
           >
         Cerrar
@@ -327,7 +327,7 @@ aria-hidden="true"
         <button
         (click)="onDeleteEducation(deleteEducation!.idEdu)"
         type="submit"
-        class="btn btn-danger"
+        class="btn btn-danger m-2"
         data-dismiss="modal"
         id="myModal"
         > Eliminar

@@ -19,9 +19,9 @@ export class EducationComponent implements OnInit {
   constructor(private educacionService:EducacionService, private tokenService: TokenService) { }
   isLogged = false;
   ngOnInit(): void {
+    this.getEducations();
     if(this.tokenService.getToken()){
       this.isLogged = true;
-    this.getEducations();
   }  else{
     this.isLogged = false;
   }

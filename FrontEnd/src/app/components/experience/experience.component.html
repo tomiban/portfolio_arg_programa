@@ -2,8 +2,8 @@
   <div class="row m-4 p-1 bg-body rounded shadow">
     <div class="row edu main-container">
       <h2>Experiencia</h2>
-      <div class="boton">
-        <button type="button" class="boton" (click)="onOpenModal('add')">
+      <div class="boton" *ngIf="isLogged">
+        <button *ngIf="isLogged" type="button" class="boton" (click)="onOpenModal('add')">
           <i class="fa fa-plus fa-lg"></i>
           <span class="sr-only"> (current) </span>
         </button>
@@ -12,7 +12,7 @@
   
     <div id="main-container">
     <div class="col-md-12 col-lg-12" *ngFor="let experiencia of experiencia">
-      <div class="text-center">
+      <div class="text-center" *ngIf="isLogged">
         <a 
         (click)="onOpenModal('edit',experiencia)"
         class="btn-sm btn-primary tooltips m-1"
@@ -30,7 +30,7 @@
       <i class="fa fa-times"></i></a>
       </div>
       
-      <div>
+      <div class="xp">
       <h4>
           {{experiencia.tituloExp}}
       </h4>
@@ -53,7 +53,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addExperienciamodalLabel">Añadir experiencia</h5>
+        <h5 class="modal-title" id="addExperienciamodalLabel">Añadir Experiencia</h5>
         <button
         type="button"
         class="close"
