@@ -35,4 +35,36 @@ export class BannerComponent implements OnInit {
       }
     })
   }
+
+  public onOpenModal(mode:String, user?: Usuario):void{
+    const container=document.getElementById('main-container');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal');
+    if(mode==='add'){
+      button.setAttribute('data-target', '#addUsuarioModal');
+    } else if(mode==='delete'){
+      this.editUsuario=user;
+      button.setAttribute('data-target', '#deleteUsuarioModal');
+    } else if (mode==='edit'){
+      this.editUsuario=user;
+      button.setAttribute('data-target', '#editUsuarioModal')
+
+    }
+    container?.appendChild(button);
+    button.click();
+  }
+
+  public onUpdateUsuario(usuario: Usuario){
+    document.getElementById('add-usuario-form')?.click();
+    this.headerService.updateUsuario(usuario).subscribe({
+      next:(response: Usuario) =>{
+        console.log(response);
+        this.getUser()
+      }, 
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
+  }
 }

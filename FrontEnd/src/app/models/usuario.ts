@@ -5,4 +5,5 @@ export interface Usuario{
     titulo: String;
     descripcion: String;
     fotoPerfil: String;
+    fotoHeader: String;
 }

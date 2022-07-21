@@ -1,4 +1,4 @@
-package comportfolioARGPROG.tb.repository;
+package comportfolioARGPROG.tb.Repository;
 
 import comportfolioARGPROG.tb.models.Skills;
 import org.springframework.data.jpa.repository.JpaRepository;

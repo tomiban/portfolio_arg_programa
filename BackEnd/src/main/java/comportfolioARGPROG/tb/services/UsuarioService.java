@@ -2,7 +2,7 @@ package comportfolioARGPROG.tb.services;
 
 import comportfolioARGPROG.tb.exception.UserNotFoundException;
 import comportfolioARGPROG.tb.models.Usuario;
-import comportfolioARGPROG.tb.repository.UsuarioRepo;
+import comportfolioARGPROG.tb.Repository.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
