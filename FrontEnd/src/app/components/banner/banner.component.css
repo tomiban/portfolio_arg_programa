@@ -20,8 +20,17 @@
   z-index: 1;
 }
 
+/* #05668d #8b8c89 #22333b #5e6572 #6c757d #495057
+
+*/
+#titulo{
+  color: #495057;
+  font-weight: 700;
+}
+
 span {
   height: 130px;
+  
 }
 
 span a{

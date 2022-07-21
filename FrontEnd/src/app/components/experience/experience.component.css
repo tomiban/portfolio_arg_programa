@@ -8,10 +8,6 @@ a{
     margin: 0;
 }
 
-.boton button{
-
-}
-
 .boton button a{
     text-align: center;
     width: 20px;
@@ -31,6 +27,7 @@ a{
 
 .xp h5 {
     font-weight:400;
+    color: #495057;
 }
 
 .xp span{
@@ -47,4 +44,8 @@ a{
 
 input{
     margin-bottom: 7px;
+}
+
+span h2, p {
+    margin-top: 5px;
 }
