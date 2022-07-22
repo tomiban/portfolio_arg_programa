@@ -24,10 +24,10 @@
         />
       </div>
     </div>
-    <!-- INTEGRAR UN DIV QUE ABARCQUE LA LLAMDA A LA FUNCION Y EL FIN DEL MODAL  -->
+
     <span class="espacio"> 
       <div class="col-lg-10" class="boton" *ngIf="isLogged" >
-        <button class="float-xl-end mt-5" type="button"  data-mdb-ripple-color="dark" (click)="onOpenModal('edit', usuario)">Editar Perfil
+        <button class="boton" class="btn btn-outline-dark border-2 mt-5" type="button"  (click)="onOpenModal('edit', usuario)">Editar Perfil
         </button>
     </div>
     </span>
@@ -41,8 +41,9 @@
     </div>
   </div>
   
-  <div class="row m-4 p-1 bg-body rounded shadow">
-    <div *ngIf="usuario" class="col-md-12 col-lg-12">
+  <div class="row m-4 p-1 bg-body rounded shadow ">
+    
+    <div *ngIf="usuario" class="col-md-12 col-lg-11">
         <span>
             <h2>Acerca de mi</h2>
             <p>{{usuario.descripcion}}</p>
