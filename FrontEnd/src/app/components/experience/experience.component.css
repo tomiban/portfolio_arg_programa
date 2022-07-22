@@ -2,25 +2,6 @@ a{
     text-decoration: none;
 }
 
-.boton{
-    float: right;
-    position: relative;
-    margin: 0;
-}
-
-.boton button a{
-    text-align: center;
-    width: 20px;
-    height: 30px;
-}
-
-.boton button a i {
-  position: absolute;
-  top: 125%;
-  left: 93%;
-  margin: -25px 0 0 -25px;
-}
-
 .xp h4, h5{
     display: inline-block;
 }
