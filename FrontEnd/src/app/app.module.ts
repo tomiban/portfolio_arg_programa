@@ -41,7 +41,27 @@ import { interceptorProvider} from './servicios/interceptor-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({}),
+    NgCircleProgressModule.forRoot({
+      "backgroundPadding": 7,
+      "radius": 60,
+      "space": -2,
+      "outerStrokeWidth": 2,
+      "outerStrokeColor": "#808080",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 2,
+      "title": [
+                "working",
+                "in",
+                "progress"
+      ],
+      "titleFontSize": '12',
+      "subtitleFontSize": '20',
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "lazy": true,
+      "clockwise": false
+    }),
     HttpClientModule,
     FormsModule
   ],
