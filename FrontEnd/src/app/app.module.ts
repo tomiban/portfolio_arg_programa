@@ -57,7 +57,7 @@ import { interceptorProvider} from './servicios/interceptor-service';
       "titleFontSize": '12',
       "subtitleFontSize": '20',
       "animateTitle": false,
-      "animationDuration": 1000,
+      "animationDuration": 1300,
       "showUnits": false,
       "lazy": true,
       "clockwise": false

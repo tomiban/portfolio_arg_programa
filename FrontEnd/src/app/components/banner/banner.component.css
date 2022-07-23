@@ -43,11 +43,15 @@ input{
   height: 30px;
 }
 
+code { 
+  color:#495057;
+}
 
-
+/* #495057 #028090 */
 #titulo{
-  color: #495057;
+  color: #028090;
   font-weight: 700;
+  text-align: justify;
 }
 
 span {

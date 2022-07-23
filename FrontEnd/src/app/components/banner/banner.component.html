@@ -35,20 +35,21 @@
       <div *ngIf="usuario" class="col-xs-5 col-sm-5 col-md-12 col-lg12">
        <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
         <p id="titulo">{{usuario.titulo}}</p>
-        <span> Esperanza, Santa Fe. Argentina </span>
-        <span><a href="a">Información de contacto</a></span>
+        <span> Esperanza, Santa Fe. Argentina. </span>
       </div>
     </div>
+
+    <div class="row ">
+      <div *ngIf="usuario" class="col-md-12 col-lg-11 mt-3">
+          <div>
+            <h5>Acerca de mi </h5>
+              <code>{{usuario.descripcion}}</code>
+          </div>
+      </div>
+
   </div>
   
-  <div class="row m-4 p-1 bg-body rounded shadow ">
-    
-    <div *ngIf="usuario" class="col-md-12 col-lg-11">
-        <span>
-            <h2>Acerca de mi</h2>
-            <p>{{usuario.descripcion}}</p>
-        </span>
-    </div>
+
   
   <!-- MODAL EDIT PERFIL -->
     <div
