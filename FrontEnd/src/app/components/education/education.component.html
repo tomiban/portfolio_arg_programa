@@ -12,7 +12,7 @@
 
     <div id="main-container">
       <div class="row edu main-container m-1">
-        <div class="col-md-12 col-lg-12" *ngFor="let education of educacion">
+        <div class="col-md-12 col-lg-12" *ngFor="let education of educacion?.reverse()">
           <div class="text-center" *ngIf="isLogged">
             <a (click)="onOpenModal('edit',education)" class="btn-sm btn-primary tooltips m-1" data-placement="top"
               data-toogle="tooltip" data-original-title="Edit">
@@ -110,7 +110,7 @@
                 <form #editForm='ngForm'>
                   <div class="form-group">
                     <input type="text" ngModel="{{editEducation?.tituloEdu}}" name="tituloEdu" class="form-control"
-                      id="tituloEdu" placeholder="Institucion" required>
+                      id="tituloEdu" placeholder="Título" required>
                   </div>
                   <input type="hidden" ngModel="{{ editEducation?.idEdu }}" name="idEdu" class="form-control"
                     placeholder="">

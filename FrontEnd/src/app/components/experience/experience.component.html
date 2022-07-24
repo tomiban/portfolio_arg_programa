@@ -12,7 +12,7 @@
   
     <div id="main-container">
       <div class="row edu main-container m-1">
-    <div class="col-md-12 col-lg-12" *ngFor="let experiencia of experiencia">
+    <div class="col-md-12 col-lg-12" *ngFor="let experiencia of experiencia?.reverse()">
       <div class="text-center" *ngIf="isLogged">
         <a 
         (click)="onOpenModal('edit',experiencia)"
@@ -38,8 +38,11 @@
       <span>|</span>
       <h5>            {{experiencia.empresaExp}}</h5> 
     </div>
+    <div class="col-lg-7 m-0">
       <small>{{experiencia.descripcionExp}}</small>
       <p class="text-secondary">Año: {{experiencia.fechaExp}} - {{experiencia.fechaFinExp}}</p>
+    </div>
+
     </div>
   
   
