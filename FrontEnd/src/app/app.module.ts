@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider} from './servicios/interceptor-service';
+import {NgPipesModule} from 'ngx-pipes';
 
 
 
@@ -63,7 +64,8 @@ import { interceptorProvider} from './servicios/interceptor-service';
       "clockwise": false
     }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgPipesModule
   ],
   providers: [
     interceptorProvider
