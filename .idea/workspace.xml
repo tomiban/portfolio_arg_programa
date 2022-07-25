@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="" />
+    <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/proyects/proyects.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/proyects/proyects.component.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/BackEnd" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,7 +37,7 @@
     </option>
   </component>
   <component name="ProjectId" id="29kYT3eWJdNn8GMLpKwsDnP8hVw" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -62,8 +67,8 @@
       <recent name="comportfolioARGPROG.tb.services" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TbApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.com.portfolioARGPROG.tb.TbApplication">
+    <configuration name="TbApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comportfolioARGPROG.tb.TbApplication" />
       <module name="tb" />
       <extension name="coverage">
@@ -76,9 +81,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.portfolioARGPROG.tb.TbApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.portfolioARGPROG.tb.TbApplication" />
+      <module name="tb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.portfolioARGPROG.tb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TbApplication" />
+        <item itemvalue="Application.com.portfolioARGPROG.tb.TbApplication" />
       </list>
     </recent_temporary>
   </component>
