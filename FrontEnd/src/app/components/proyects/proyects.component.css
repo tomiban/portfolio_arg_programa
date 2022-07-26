@@ -1,12 +1,28 @@
-.contenedor{
-    width: auto;
-}
 
-.parte1, parte2{
-    display: inline-block;
-    text-align: justify;
-}
-
-.img-proyecto{
-    box-shadow: 10px 10px 30px #000000;
-}
+.project-title {
+    margin: 10px;
+    max-width: 250px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-title:hover {
+    transform: scale(1.1);
+  }
+  
+   p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: rgb(32, 28, 28);
+  }
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 20px auto 0;
+  }
+  
+  .project-title img {
+    max-width: 80%;
+  }
