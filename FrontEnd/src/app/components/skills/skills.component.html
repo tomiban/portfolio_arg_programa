@@ -4,216 +4,210 @@
     <div class="col-lg-12">
         <div class="card-body d-flex justify-content-between align-items-center">
           <h2>Hard & Soft Skills </h2>
-          <button *ngIf="isLogged"  type="button" class="btn btn-outline-dark border-2 start-end mb-4" (click)="('add')">
+          <button *ngIf="isLogged"  type="button" class="btn btn-outline-dark border-2 start-end mb-4" (click)="onOpenModal('add')">
             <i class="fa fa-plus fa-lg start-end"></i>
           </button>
       </div>
     </div>
+  </div>
 
-      <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="90"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="''"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/html.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#ff3300'"
-        [innerStrokeColor]="'#ff6600'"
-        [animation]="true"
-        [animationDuration]="1500"
-        [lazy]="true"
-      ></circle-progress>
+    <div id="main-container">
+      <div *ngFor="let skills of skills">
+        <div class="col-sm-2 col-md-2 col-lg-2 float-start">
+          <div class=" text-center" >
+            <div class="text-center" *ngIf="isLogged">
+             <a 
+             (click)="onOpenModal('edit',skills)"
+             class="btn-sm btn-primary tooltips m-1"
+             data-placement="top"
+             data-toogle="tooltip"
+             data-original-title="Edit">
+           <i class="fa fa-pencil"></i></a>
+       
+           <a 
+             (click)="onOpenModal('delete',skills)"
+             class="btn-sm btn-danger tooltips m-1"
+             data-placement="top"
+             data-toogle="tooltip"
+             data-original-title="Delete">
+           <i class="fa fa-times"></i></a>
+            </div>
+           
+         <div class="mb-1">
+           <circle-progress
+           [percent]="skills.porcentaje"
+           [radius]="73"
+           [title]="'85'"
+           [showTitle]="true"
+           [titleColor]="''"
+           [titleFontSize]="'3em'"
+           [showUnits]="true"
+           [showSubtitle]="false"
+           [imageSrc]="skills.fotoSkill"
+           [showImage]="true"
+           [imageHeight]="85"
+           [imageWidth]="85"
+           [outerStrokeWidth]="10"
+           [innerStrokeWidth]="2"
+           [outerStrokeColor]="skills.colorExterno"
+           [innerStrokeColor]="skills.colorInterno"
+           [animation]="true"
+           [animationDuration]="1000"
+           [lazy]="false"
+           [clockwise]="false"
+         ></circle-progress>
+       </div>
+        </div>
+  </div>
+    <!--AGREGAR MODAL-->
+    <div class="modal fade" id="addSkillsModal" tabindex="-1" role="dialog"
+    aria-labelledby="addSkillsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addSkillsnmodalLabel">Añadir Hard o Soft Skill</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm='ngForm' (ngSubmit)="onAddSkill(addForm)">
+            <div class="form-group">
+              <input type="text" ngModel name="nombreSkill" class="form-control" id="nombreSkill" placeholder="Nombre"
+                required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" ngModel name="porcentaje" class="form-control" id="porcentaje"
+                placeholder="Porcentaje" required>
+            </div>
+
+
+            <div class="form-group">
+              <input type="text" ngModel name="colorExterno" class="form-control" id="colorExterno"
+                placeholder="Color externo" required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" ngModel name="colorInterno" class="form-control" id="colorInterno"
+                placeholder="Color interno" required>
+            </div>
+
+
+            <div class="form-group">
+              <input type="text" ngModel name="fotoSkill" class="form-control" id="fotoSkill"
+                placeholder="Url de la imagen" required>
+            </div>
+
+            <div class="model-footer d-flex justify-content-center">
+
+              <button [disabled]="addForm.invalid" type="submit" class="btn btn-success m-1"> Añadir
+              </button>
+
+              <button type="button" id="add-skills-form" class="btn btn-secondary m-1" data-dismiss="modal">
+                Cerrar
+              </button>
+
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="77"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/CSS.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="70"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#0000CD'"
-        [innerStrokeColor]="'#1E90FF'"
-        [animation]="true"
-        [animationDuration]="1500"
-        [lazy]="true"
-      ></circle-progress>
+  </div>
+
+  <!--EDITAR MODAL-->
+  <div class="modal fade" id="editSkillsModal" tabindex="-1" role="dialog"
+  aria-labelledby="skillEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateSkillsmodalLabel">Editar {{editSkill?.nombreSkill}}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm='ngForm'>
+          <div class="form-group">
+            <input type="text" ngModel="{{editSkill?.nombreSkill}}" name="nombreSkill" class="form-control"
+              id="nombreSkill" placeholder="Nombre" required>
+          </div>
+          <input type="hidden" ngModel="{{ editSkill?.idSkill}}" name="idSkill" class="form-control"
+            placeholder="">
+
+          <div class="form-group">
+            <input type="text" ngModel="{{editSkill?.porcentaje}}" name="porcentaje"
+              class="form-control" id="porcentaje" placeholder="Porcentaje" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" ngModel="{{editSkill?.colorExterno}}" name="colorExterno"
+              class="form-control" id="colorExterno" placeholder="Color externo de la barra" required>
+          </div>
+
+          <div class="form-group">
+            <input type="text" ngModel="{{editSkill?.colorInterno}}" name="colorInterno"
+              class="form-control" id="colorInterno" placeholder="Color interno de la barra" required>
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" ngModel="{{editSkill?.fotoSkill}}" name="fotoSkill" class="form-control"
+              id="fotoSkill" placeholder="URL de la imagen" required>
+          </div>
+
+
+          <div class="model-footer d-flex justify-content-center">
+
+            <button (click)="onUpdateSkill(editForm.value)" type="submit" data-dismiss="modal"
+              class="btn btn-success m-1"> Añadir cambios
+            </button>
+
+            <button type="button" id="" class="btn btn-secondary m-1" data-dismiss="modal">
+              Cerrar
+            </button>
+
+          </div>
+        </form>
+      </div>
     </div>
-    
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="70"
-        [radius]="70"
-    
-        [titleColor]="'red'"
-    
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/js.png'"
-        [showImage]="true                                                                                                     "                                                                                                                                 
-        [imageHeight]="84"
-        [imageWidth]="68"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#FFFF1E'"
-        [innerStrokeColor]="'#FFFF46'"
-        [animation]="true"
-        [animationDuration]="1500"
-        [lazy]="true"
-      ></circle-progress>
+  </div>
+</div>
+
+
+<!--DELETE MODAL-->
+<div data-bs-toggle="modal" data-bs-target="#deleteModelLabel" class="modal fade" id="deleteSkillsModal"
+tabindex="-1" role="dialog" aria-labelledby="skillsDeleteModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="deleteSkillsmodalLabel">Eliminar Skill</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="50"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/php.svg'"
-        [showImage]="true"
-        [imageHeight]="200"
-        [imageWidth]="100"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#474973'"
-        [innerStrokeColor]="'#A69CAC'"
-        [animation]="true"
-        [animationDuration]="1500"
-        [lazy]="true"
-      ></circle-progress>
+    <div class="modal-body">
+      <p>¿Estás seguro de que queres eliminar {{deleteSkill?.nombreSkill}} de tu lista? </p>
+
+
+
+      <div class="model-footer d-flex justify-content-center">
+        <button type="button" id="" class="btn btn-secondary m-2" data-dismiss="modal">
+          Cerrar
+        </button>
+
+        <button (click)="onDeleteSkill(deleteSkill!.idSkill)" type="submit" class="btn btn-danger m-2"
+          data-dismiss="modal" id="myModal"> Eliminar
+        </button>
+      </div>
     </div>
-    
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-      <circle-progress
-      [percent]="30"
-      [radius]="70"
-      [title]="'85'"
-      [showTitle]="true"
-      [titleColor]="'red'"
-      [titleFontSize]="'3em'"
-      [showUnits]="true"
-      [showSubtitle]="false"
-      [imageSrc]="'../../../assets/net.png'"
-      [showImage]="true"
-      [imageHeight]="100"
-      [imageWidth]="100"
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#7209b7'"
-      [innerStrokeColor]="'#7209b7'"
-      [animation]="true"
-      [animationDuration]="1500"
-      [lazy]="true"
-    ></circle-progress>
+  </div>
+</div>
+</div>
+
+
+
     </div>
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="90"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/git.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#0C090D'"
-        [innerStrokeColor]="'#7A7265'"
-        [animation]="true"
-        [animationDuration]="1500"
-      ></circle-progress>
-    </div>
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="78"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/eng.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="70"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#7C898B'"
-        [innerStrokeColor]="'#93A3B1'"
-        [animation]="true"
-        [animationDuration]="1500"
-      ></circle-progress>
-    </div>
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="70"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/grupal.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#7C898B'"
-        [innerStrokeColor]="'#93A3B1'"
-        [animation]="true"
-        [animationDuration]="1500"
-      ></circle-progress>
-    </div>
-    <div class="text-center col-sm-3 col-md-2 col-lg2">
-        <circle-progress
-        [percent]="80"
-        [radius]="70"
-        [title]="'85'"
-        [showTitle]="true"
-        [titleColor]="'red'"
-        [titleFontSize]="'3em'"
-        [showUnits]="true"
-        [showSubtitle]="false"
-        [imageSrc]="'../../../assets/flexibilidad.png'"
-        [showImage]="true"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#7C898B'"
-        [innerStrokeColor]="'#93A3B1'"
-        [animation]="true"
-        [animationDuration]="1500"
-      ></circle-progress>
-    </div>
-    
-    
+  </div>
+</div>

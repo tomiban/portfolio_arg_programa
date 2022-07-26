@@ -13,16 +13,20 @@ public class Skills {
     private String nombreSkill;
     private String fotoSkill;
     private int porcentaje;
+    private String colorExterno;
+    private String colorInterno;
 
 
     public Skills() {
     }
 
-    public Skills(Long idSkill, String nombreSkill, String fotoSkill, int porcentaje) {
+    public Skills(Long idSkill, String nombreSkill, String fotoSkill, int porcentaje, String colorExterno, String colorInterno) {
         this.idSkill = idSkill;
         this.nombreSkill = nombreSkill;
         this.fotoSkill = fotoSkill;
         this.porcentaje = porcentaje;
+        this.colorExterno = colorExterno;
+        this.colorInterno = colorInterno;
     }
 
     public Long getIdSkill() {
@@ -55,5 +59,21 @@ public class Skills {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
+    }
+
+    public String getColorExterno() {
+        return colorExterno;
+    }
+
+    public void setColorExterno(String colorExterno) {
+        this.colorExterno = colorExterno;
+    }
+
+    public String getColorInterno() {
+        return colorInterno;
+    }
+
+    public void setColorInterno(String colorInterno) {
+        this.colorInterno = colorInterno;
     }
 }
