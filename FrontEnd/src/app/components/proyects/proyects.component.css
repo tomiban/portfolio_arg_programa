@@ -14,6 +14,7 @@
     font-size: 20px;
     margin-top: 10px;
     color: rgb(32, 28, 28);
+    text-align: center;
   }
   .project-container {
     display: flex;
@@ -21,8 +22,15 @@
     align-items: center;
     justify-content: center;
     max-width: 20px auto 0;
+    margin-left: 25px;
   }
   
   .project-title img {
-    max-width: 80%;
+    width: 200px;
+    height: 270px;
   }
+
+  input{
+    margin-bottom: 7px;
+  }
+

@@ -30,5 +30,5 @@ public class TbApplication {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
-// dsadasdasas
+
 }

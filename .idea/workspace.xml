@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e20e03e8-9634-44f2-b223-a25789e434a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/models/skills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEnd/src/app/servicios/skills.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/controller/SkillsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/controller/SkillsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/models/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/models/Skills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/services/SkillsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/com/portfolioARGPROG/tb/services/SkillsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/curses/curses.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/curses/curses.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/logo-ap/logo-ap.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/skills/skills.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/.firebase/hosting.ZGlzdFxwb3J0Zm9saW8tYXJnLXByb2dyYW1h.cache" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/.firebase/hosting.ZGlzdFxwb3J0Zm9saW8tYXJnLXByb2dyYW1h.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/src/app/components/proyects/proyects.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/src/app/components/proyects/proyects.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
