@@ -2,108 +2,189 @@
   <div class="row edu main-container m-0">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg12">
       <div class="img-fluid" *ngIf="usuario">
-        <img id="banner" src="{{usuario.fotoHeader}}" alt="Banner del sitio" />
+        <img
+          id="banner"
+          src="{{ usuario.fotoHeader }}"
+          alt="Banner del sitio"
+        />
       </div>
     </div>
 
     <div id="main-container">
-    <div *ngIf="usuario" class="row edu main-container m-1">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg2">
-          <img src="{{usuario.fotoPerfil}}" alt="Foto de perfil" class="img-fluid  img-circle" id="profile-img" />
-        </div>
+      <div *ngIf="usuario" class="row edu main-container m-1">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg2">
+            <img
+              src="{{ usuario.fotoPerfil }}"
+              alt="Foto de perfil"
+              class="img-fluid img-circle"
+              id="profile-img"
+            />
+          </div>
 
-        <div class="col-md-10 col-sm-8 col-lg-8" class="boton" *ngIf="isLogged">
-          <button class="boton" class="btn btn-outline-dark border-2" type="button"
-            (click)="onOpenModal('edit', usuario)">Editar Perfil
-          </button>
-        </div>
-      </div>
-    
-
-    <div class="row m-0 p-0" id="data-name">
-      <div *ngIf="usuario" class="col-xs-5 col-sm-5 col-md-12 col-lg12">
-        <h1 class="m-0">{{usuario.nombre}} {{usuario.apellido}}</h1>
-        <p id="titulo" class="m-0">{{usuario.titulo}}</p>
-        <span class="m-0"> Esperanza, Santa Fe. Argentina. </span>
-      </div>
-    </div>
-
-    <div class="row m-0">
-      <div *ngIf="usuario" class="col-md-12 col-lg-11 mt-3 p-0">
-        <div>
-          <h5 class="m-0">Acerca de mi </h5>
-          <code class="m-0">{{usuario.descripcion}}</code>
-        </div>
-      </div>
-    </div>
-    
-    
-    <!-- MODAL EDIT PERFIL -->
-    <div class="modal fade" id="editUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="usuarioEditModalLabel"
-      aria-hidden="true"> 
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="updateUsuarioModalLabel">Editar perfil</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="close">
-              <span aria-hidden="true">&times;</span>
+          <div
+            class="col-md-10 col-sm-8 col-lg-8"
+            class="boton"
+            *ngIf="isLogged"
+          >
+            <button
+              class="boton"
+              class="btn btn-outline-dark border-2"
+              type="button"
+              (click)="onOpenModal('edit', usuario)"
+            >
+              Editar Perfil
             </button>
           </div>
-          <div class="modal-body">
-            <form #editForm='ngForm'>
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.nombre}}" name="nombre" class="form-control" id="nombre"
-                  placeholder="Nombre" required>
-              </div>
+        </div>
 
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.apellido}}" name="apellido" class="form-control"
-                  id="apellido" placeholder="Apellido" required>
-              </div>
+        <div class="row m-0 p-0" id="data-name">
+          <div *ngIf="usuario" class="col-xs-5 col-sm-5 col-md-12 col-lg12">
+            <h1 class="m-0">{{ usuario.nombre }} {{ usuario.apellido }}</h1>
+            <p id="titulo" class="m-0">{{ usuario.titulo }}</p>
+            <span class="m-0"> Esperanza, Santa Fe. Argentina. </span>
+          </div>
+        </div>
 
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.titulo}}" name="titulo" class="form-control" 
-                  placeholder="Profesion" required>
-              </div>
+        <div class="row m-0">
+          <div *ngIf="usuario" class="col-md-12 col-lg-11 mt-3 p-0">
+            <div>
+              <h5 class="m-0">Acerca de mi</h5>
+              <code class="m-0">{{ usuario.descripcion }}</code>
+            </div>
+          </div>
+        </div>
 
-
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.descripcion}}" name="descripcion" class="form-control"
-                  id="descripcion" placeholder="Acerca de mí" required>
-              </div>
-
-              <input type="hidden" ngModel="{{ editUsuario?.id }}" name="id" class="form-control" placeholder="">
-
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.fotoPerfil}}" name="fotoPerfil" class="form-control"
-                  id="fotoPerfil" placeholder="Url de tu imagen de perfil" required>
-              </div>
-
-              <div class="form-group">
-                <input type="text" ngModel="{{editUsuario?.fotoHeader}}" name="fotoHeader" class="form-control"
-                  id="fotoHeader" placeholder="Url para tu imagen de encabezado" required>
-              </div>
-
-
-              <div class="model-footer d-flex justify-content-center">
-
-                <button (click)="onUpdateUsuario(editForm.value)" type="submit" data-dismiss="modal"
-                  class="btn btn-success m-1"> Añadir cambios
+        <!-- MODAL EDIT PERFIL -->
+        <div
+          class="modal fade"
+          id="editUsuarioModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="usuarioEditModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateUsuarioModalLabel">
+                  Editar perfil
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="close"
+                >
+                  <span aria-hidden="true">&times;</span>
                 </button>
-
-                <button type="button" id="" class="btn btn-secondary m-1" data-dismiss="modal">
-                  Cerrar
-                </button>
-
               </div>
-            </form>
+              <div class="modal-body">
+                <form #editForm="ngForm">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.nombre }}"
+                      name="nombre"
+                      class="form-control"
+                      id="nombre"
+                      placeholder="Nombre"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.apellido }}"
+                      name="apellido"
+                      class="form-control"
+                      id="apellido"
+                      placeholder="Apellido"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.titulo }}"
+                      name="titulo"
+                      class="form-control"
+                      placeholder="Profesion"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.descripcion }}"
+                      name="descripcion"
+                      class="form-control"
+                      id="descripcion"
+                      placeholder="Acerca de mí"
+                      required
+                    />
+                  </div>
+
+                  <input
+                    type="hidden"
+                    ngModel="{{ editUsuario?.id }}"
+                    name="id"
+                    class="form-control"
+                    placeholder=""
+                  />
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.fotoPerfil }}"
+                      name="fotoPerfil"
+                      class="form-control"
+                      id="fotoPerfil"
+                      placeholder="Url de tu imagen de perfil"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      ngModel="{{ editUsuario?.fotoHeader }}"
+                      name="fotoHeader"
+                      class="form-control"
+                      id="fotoHeader"
+                      placeholder="Url para tu imagen de encabezado"
+                      required
+                    />
+                  </div>
+
+                  <div class="model-footer d-flex justify-content-center">
+                    <button
+                      (click)="onUpdateUsuario(editForm.value)"
+                      type="submit"
+                      data-dismiss="modal"
+                      class="btn btn-success m-1"
+                    >
+                      Añadir cambios
+                    </button>
+
+                    <button
+                      type="button"
+                      id=""
+                      class="btn btn-secondary m-1"
+                      data-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-  </div>
-</div>
 </div>

@@ -7,64 +7,66 @@ import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  styleUrls: ['./banner.component.css'],
 })
 export class BannerComponent implements OnInit {
-  public usuario : Usuario | undefined;
+  public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
 
-  constructor(private headerService : HeaderService, private tokenService: TokenService) { }
+  constructor(
+    private headerService: HeaderService,
+    private tokenService: TokenService
+  ) {}
 
   isLogged = false;
   ngOnInit(): void {
     this.getUser();
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
-  } else{
-    this.isLogged = false;
+    } else {
+      this.isLogged = false;
+    }
   }
-}
 
-  public getUser():void{
+  public getUser(): void {
     this.headerService.getUser().subscribe({
-      next: (response: Usuario) =>{
-        this.usuario=response;
+      next: (response: Usuario) => {
+        this.usuario = response;
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
-      }
-    })
+      },
+    });
   }
 
-  public onOpenModal(mode:String, user?: Usuario):void{
-    const container=document.getElementById('main-container');
-    const button=document.createElement('button');
-    button.style.display='none';
+  public onOpenModal(mode: String, user?: Usuario): void {
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
-    if(mode==='add'){
+    if (mode === 'add') {
       button.setAttribute('data-target', '#addUsuarioModal');
-    } else if(mode==='delete'){
-      this.editUsuario=user;
+    } else if (mode === 'delete') {
+      this.editUsuario = user;
       button.setAttribute('data-target', '#deleteUsuarioModal');
-    } else if (mode==='edit'){
-      this.editUsuario=user;
-      button.setAttribute('data-target', '#editUsuarioModal')
-
+    } else if (mode === 'edit') {
+      this.editUsuario = user;
+      button.setAttribute('data-target', '#editUsuarioModal');
     }
     container?.appendChild(button);
     button.click();
   }
 
-  public onUpdateUsuario(usuario: Usuario){
+  public onUpdateUsuario(usuario: Usuario) {
     document.getElementById('add-usuario-form')?.click();
     this.headerService.updateUsuario(usuario).subscribe({
-      next:(response: Usuario) =>{
+      next: (response: Usuario) => {
         console.log(response);
-        this.getUser()
-      }, 
-      error:(error:HttpErrorResponse)=>{
+        this.getUser();
+      },
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
-      }
-    })
+      },
+    });
   }
 }

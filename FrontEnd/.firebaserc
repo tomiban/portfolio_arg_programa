@@ -1,5 +1,20 @@
 {
   "projects": {
-    "default": "argprogramatest-tb"
-  }
+    "default": "argprogramatest-tb",
+    "argprogramatest": "argprogramatest-tb",
+    "oficial": "tomas-banchio"
+  },
+  "targets": {
+    "tomas-banchio": {
+      "hosting": {
+        "produccion": [
+          "tomasbanchiodev"
+        ],
+        "tomas-banchio": [
+          "tomas-banchio"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

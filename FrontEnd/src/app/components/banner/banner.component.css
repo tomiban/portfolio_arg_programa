@@ -1,10 +1,7 @@
-
 #banner {
   width: 100%;
   border-radius: 20px 20px 0 0;
 }
-
-
 
 #profile-img {
   width: 200px;
@@ -13,28 +10,17 @@
   margin-left: 20px;
 }
 
-
-
-input{
+input {
   margin-bottom: 7px;
 }
 
-
-code { 
-  color:#495057;
+code {
+  color: #495057;
 }
 
 /* #495057 #028090 */
-#titulo{
+#titulo {
   color: #028090;
   font-weight: 700;
   text-align: justify;
 }
-
-
-
-
-
-
-
-

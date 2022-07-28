@@ -1,5 +1,6 @@
 {
-  "hosting": {
+  "hosting": [{
+    "target":"tomas-banchio",
     "public": "dist/portfolio-arg-programa",
     "ignore": [
       "firebase.json",
@@ -12,5 +13,18 @@
         "destination": "/index.html"
       }
     ]
-  }
+  }, {
+    "target": "produccion",
+  "public": "dist/produccion",
+  "ignore": [
+    "**/.*",
+    "**/node_modules/**"
+  ],
+  "rewrites": [
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }
+  ]
+}]
 }
