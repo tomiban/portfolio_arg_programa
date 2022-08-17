@@ -5,3 +5,8 @@
 .botones{
     margin-right: 20px;
 }
+
+button{
+    border-color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.55);
+}
