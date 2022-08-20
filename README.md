@@ -3,7 +3,9 @@ Portfolio diseñado como trabajo final con el que aprobé la segunda etapa #YoPr
 Se ha realizado con una arquitectura en capas distribuídas siguiendo un patron MVC, alojando cada uno de los segmentos en distintos hostings gratuitos.
 Incluye mis datos, experiencias, estudios y cursos actualizados al día de la fecha. 
 
-¡Espero que sea de su utilidad! 
+<img src="./portfolio.png">
+
+
 
 
 
